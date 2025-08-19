@@ -1,0 +1,641 @@
+[Running] python -u "c:\Users\ASUS\Documents\Tugas Akhir\olah\tempCodeRunnerFile.py"
+=== Iterasi 1 ===
+Traceback (most recent call last):
+  File "c:\Users\ASUS\Documents\Tugas Akhir\olah\tempCodeRunnerFile.py", line 30, in <module>
+    X_tfidf, y, test_size=0.2, random_state=i
+    ^^^^^^^
+NameError: name 'X_tfidf' is not defined
+
+[Done] exited with code=1 in 23.302 seconds
+
+[Running] python -u "c:\Users\ASUS\Documents\Tugas Akhir\olah\tempCodeRunnerFile.py"
+=== Iterasi 1 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8667 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9538
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9256
+=== Iterasi 2 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8590 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8051 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8051 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9256
+=== Iterasi 3 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9128
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9103
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9103
+=== Iterasi 4 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8641 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8641 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9513
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8615 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9308
+=== Iterasi 5 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9128
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9026
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8205 | Jaccard Acc: 0.8949
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.8923
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.8949
+=== Iterasi 6 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9154
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8179 | Jaccard Acc: 0.9103
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8103 | Jaccard Acc: 0.9128
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8051 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9154
+=== Iterasi 7 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8590 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8615 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9333
+=== Iterasi 8 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9026
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8103 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.7795 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.7821 | Jaccard Acc: 0.9154
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.7846 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.7872 | Jaccard Acc: 0.9128
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8051 | Jaccard Acc: 0.8949
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.8949
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8051 | Jaccard Acc: 0.8923
+=== Iterasi 9 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9564
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9615
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9513
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9436
+=== Iterasi 10 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8154 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9513
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9308
+=== Iterasi 11 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8795 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8692 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8641 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9077
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9026
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.8974
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.8949
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.8821
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.8897
+=== Iterasi 12 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8692 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8564 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9308
+=== Iterasi 13 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9256
+=== Iterasi 14 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8103 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8205 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9231
+=== Iterasi 15 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8641 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8538 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8205 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8026 | Jaccard Acc: 0.9231
+=== Iterasi 16 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8615 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9128
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9103
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9154
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8154 | Jaccard Acc: 0.9103
+=== Iterasi 17 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8718 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9513
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8359 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8103 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8205 | Jaccard Acc: 0.9410
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9359
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9385
+=== Iterasi 18 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8487 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9487
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8205 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9462
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8179 | Jaccard Acc: 0.9256
+=== Iterasi 19 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8641 | Jaccard Acc: 0.9385
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8615 | Jaccard Acc: 0.9436
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8513 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8436 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8410 | Jaccard Acc: 0.9231
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9077
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8308 | Jaccard Acc: 0.9103
+=== Iterasi 20 ===
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=1 | Manhattan Acc: 0.8231 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=3 | Manhattan Acc: 0.8462 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=5 | Manhattan Acc: 0.8385 | Jaccard Acc: 0.9333
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=7 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=9 | Manhattan Acc: 0.8282 | Jaccard Acc: 0.9308
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=11 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9282
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=13 | Manhattan Acc: 0.8333 | Jaccard Acc: 0.9256
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=15 | Manhattan Acc: 0.8256 | Jaccard Acc: 0.9205
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=17 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.9179
+C:\Users\ASUS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\pairwise.py:2466: DataConversionWarning: Data was converted to boolean for metric jaccard
+  warnings.warn(msg, DataConversionWarning)
+K=19 | Manhattan Acc: 0.8077 | Jaccard Acc: 0.9179
+
+=== HASIL UJI t BERPASANGAN ===
+Rata-rata Akurasi Manhattan: 0.8351
+Rata-rata Akurasi Jaccard  : 0.9291
+t-statistik: -30.9880
+p-value: 0.0000
+Kesimpulan: Tolak H0, terdapat perbedaan signifikan antara Manhattan dan Jaccard.
+
+[Done] exited with code=0 in 699.019 seconds
+

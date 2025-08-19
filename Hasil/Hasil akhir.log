@@ -1,0 +1,234 @@
+[Running] python -u "c:\Users\ASUS\Documents\Tugas Akhir\olah\tempCodeRunnerFile.py"
+======================================================================
+LOADING DAN PERSIAPAN DATA
+======================================================================
+✓ Data TF-IDF dimuat: (1954, 2700)
+✓ Jumlah sampel: 1954
+✓ Distribusi kelas: {1: np.int64(1005), 0: np.int64(949)}
+✓ Data Binary dibuat: (1954, 2700)
+
+======================================================================
+MENJALANKAN EKSPERIMEN
+======================================================================
+
+📍 Iterasi 1/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 2/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 3/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 4/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 5/20
+   Train: 1563, Test: 391
+   Best accuracy - Manhattan: 0.7903, Jaccard: 0.9182
+
+📍 Iterasi 6/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 7/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 8/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 9/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 10/20
+   Train: 1563, Test: 391
+   Best accuracy - Manhattan: 0.8031, Jaccard: 0.9233
+
+📍 Iterasi 11/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 12/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 13/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 14/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 15/20
+   Train: 1563, Test: 391
+   Best accuracy - Manhattan: 0.8542, Jaccard: 0.9463
+
+📍 Iterasi 16/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 17/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 18/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 19/20
+   Train: 1563, Test: 391
+
+📍 Iterasi 20/20
+   Train: 1563, Test: 391
+   Best accuracy - Manhattan: 0.8005, Jaccard: 0.9335
+
+✅ Eksperimen selesai!
+
+======================================================================
+UJI HIPOTESIS (Paired t-test)
+======================================================================
+
+H₀: Tidak ada perbedaan signifikan antara Manhattan dan Jaccard
+H₁: Terdapat perbedaan signifikan antara Manhattan dan Jaccard
+α = 0.05
+----------------------------------------------------------------------
+
+🔍 K = 1:
+   Manhattan: 0.7431 ± 0.0174
+   Jaccard:   0.9249 ± 0.0131
+   Difference: -0.1818
+   t-statistic: -41.4924
+   p-value: 0.000000
+   Cohen's d: -9.2780
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 3:
+   Manhattan: 0.7027 ± 0.0201
+   Jaccard:   0.9315 ± 0.0105
+   Difference: -0.2288
+   t-statistic: -51.5773
+   p-value: 0.000000
+   Cohen's d: -11.5330
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 5:
+   Manhattan: 0.7060 ± 0.0609
+   Jaccard:   0.9298 ± 0.0156
+   Difference: -0.2238
+   t-statistic: -17.4972
+   p-value: 0.000000
+   Cohen's d: -3.9125
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 7:
+   Manhattan: 0.7706 ± 0.0570
+   Jaccard:   0.9205 ± 0.0174
+   Difference: -0.1499
+   t-statistic: -10.7154
+   p-value: 0.000000
+   Cohen's d: -2.3960
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 9:
+   Manhattan: 0.8005 ± 0.0244
+   Jaccard:   0.9196 ± 0.0169
+   Difference: -0.1191
+   t-statistic: -19.9208
+   p-value: 0.000000
+   Cohen's d: -4.4544
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 11:
+   Manhattan: 0.8070 ± 0.0262
+   Jaccard:   0.9184 ± 0.0190
+   Difference: -0.1114
+   t-statistic: -18.7457
+   p-value: 0.000000
+   Cohen's d: -4.1917
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 13:
+   Manhattan: 0.8074 ± 0.0268
+   Jaccard:   0.9162 ± 0.0179
+   Difference: -0.1088
+   t-statistic: -19.8564
+   p-value: 0.000000
+   Cohen's d: -4.4400
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 15:
+   Manhattan: 0.8096 ± 0.0229
+   Jaccard:   0.9155 ± 0.0182
+   Difference: -0.1059
+   t-statistic: -19.0601
+   p-value: 0.000000
+   Cohen's d: -4.2620
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 17:
+   Manhattan: 0.8098 ± 0.0190
+   Jaccard:   0.9124 ± 0.0177
+   Difference: -0.1026
+   t-statistic: -19.8691
+   p-value: 0.000000
+   Cohen's d: -4.4429
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+🔍 K = 19:
+   Manhattan: 0.8107 ± 0.0213
+   Jaccard:   0.9127 ± 0.0175
+   Difference: -0.1019
+   t-statistic: -20.5962
+   p-value: 0.000000
+   Cohen's d: -4.6054
+   Kesimpulan: SIGNIFIKAN ✓
+   → Jaccard lebih baik secara signifikan
+
+======================================================================
+VISUALISASI HASIL
+======================================================================
+
+======================================================================
+LAPORAN AKHIR
+======================================================================
+
+📊 HASIL TERBAIK:
+
+Manhattan (TF-IDF):
+  • K optimal: 19
+  • Akurasi: 0.8107 ± 0.0213
+
+Jaccard (Binary):
+  • K optimal: 3
+  • Akurasi: 0.9315 ± 0.0105
+
+📈 ANALISIS SIGNIFIKANSI:
+  • Manhattan unggul signifikan: 0/10 nilai K
+  • Jaccard unggul signifikan: 10/10 nilai K
+  • Tidak signifikan: 0/10 nilai K
+
+✍️ KESIMPULAN:
+  Rata-rata keseluruhan:
+  • Manhattan: 0.7768
+  • Jaccard: 0.9201
+
+📌 REKOMENDASI:
+  Berdasarkan analisis statistik, Jaccard dengan representasi biner
+  menunjukkan performa lebih baik untuk dataset ini.
+
+📋 TABEL HASIL:
+ K  Manhattan_Mean  Manhattan_Std  Jaccard_Mean  Jaccard_Std      P_Value Significant
+ 1        0.743095       0.017356      0.924936     0.013127 4.173366e-20         Yes
+ 3        0.702685       0.020119      0.931458     0.010483 6.923627e-22         Yes
+ 5        0.706010       0.060860      0.929795     0.015556 3.564285e-13         Yes
+ 7        0.770588       0.056978      0.920460     0.017443 1.709831e-09         Yes
+ 9        0.800512       0.024433      0.919565     0.016873 3.422807e-14         Yes
+11        0.807033       0.026180      0.918414     0.019047 1.030223e-13         Yes
+13        0.807417       0.026825      0.916240     0.017910 3.630470e-14         Yes
+15        0.809591       0.022852      0.915473     0.018151 7.625723e-14         Yes
+17        0.809847       0.018981      0.912404     0.017717 3.588360e-14         Yes
+19        0.810742       0.021301      0.912660     0.017450 1.865894e-14         Yes
+
+💾 Simpan hasil ke CSV? (y/n): 

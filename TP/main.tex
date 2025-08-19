@@ -1,0 +1,1817 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}   % Contoh teks
+\usepackage{ulem} 
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows}    
+\usepackage{pgfplots} 
+\pgfplotsset{compat=1.17}
+% Tambahkan jika ada header/footer
+\usepackage[
+    a4paper, 
+    top=4cm, 
+    left=4cm, 
+    bottom=3cm, 
+    right=3cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{caption} 
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usetikzlibrary{angles,quotes}
+\usepackage{apacite}
+\usepackage{natbib}
+\bibliographystyle{apacite}
+\usepackage{csquotes}
+\usepackage{graphicx} % Pastikan paket graphicx dimuat
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabto}
+\usepackage{tabularx}
+\usepackage{setspace}
+\doublespacing
+\usepackage[hidelinks]{hyperref}  % Paket untuk membuat hyperlink yang dapat diklik pada daftar isi, gambar, tabel
+\usepackage{adjustbox}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{orange},
+  showstringspaces=false,
+  breaklines=true,
+}
+\doublespacing
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{0pt}   
+
+\titleformat{\chapter}[display]
+  {\centering\bfseries\large}
+  {BAB \Roman{chapter}}        % Menggunakan \Roman{chapter}
+  {0pt}
+  {\large\MakeUppercase}          % Judul BAB dalam KAPITAL
+  [\vspace{0cm}]           
+\titlespacing*{\chapter}{0pt}{-40pt}{24pt}
+  
+\titleformat{\section}
+{\bfseries\normalsize}          % Tebal, ukuran normal
+{\thesection}                   % Nomor dengan angka Arab
+{1em}                           % Jarak nomor ke judul
+{\bfseries}                     % Judul tebal
+
+\titlespacing*{\section}{0pt}{24pt}{12pt}
+
+% 4.2.8c - Format Anak Subbab
+\titleformat{\subsection}
+{\bfseries\normalsize}          % Tebal, ukuran normal
+{\thesubsection}                % Nomor
+{1em}                           % Jarak nomor ke judul
+{\bfseries}                     % Judul tebal
+
+\titlespacing*{\subsection}{0pt}{24pt}{12pt}
+
+% 4.3.1 - Setup penomoran halaman
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Untuk bagian awal (i, ii, iii...) - di tengah bawah
+\fancypagestyle{frontmatter}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Untuk bagian utama (1, 2, 3...) - kanan atas, kecuali halaman dengan BAB
+\fancypagestyle{mainmatter}{
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Untuk halaman dengan BAB - nomor di tengah bawah
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\usepackage{titletoc}
+\titlecontents{chapter}[0pt]
+{\bfseries}
+{BAB \thecontentslabel\quad}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+
+% Chapter Romawi untuk heading saja
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+% Section, tabel, gambar, equation tetap Arab
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+% 4.3.2 - Format tabel
+\captionsetup[table]{
+    position=top,               % Judul di atas tabel
+    justification=centering,    % Simetris
+    labelsep=space,             % Spasi antara "Tabel X.X" dan judul
+    font=normalsize,            % Ukuran font normal
+    skip=6pt                    % Jarak caption ke tabel
+}
+
+% 4.3.3 - Format gambar
+\captionsetup[figure]{
+    position=bottom,            % Nomor gambar di bawah
+    justification=centering,    % Simetris
+    labelsep=space,             % Spasi antara "Gambar X.X" dan judul
+    font=normalsize,            % Ukuran font normal
+    skip=6pt                    % Jarak gambar ke caption
+}
+
+% 4.3.4 - Format persamaan dengan penomoran (Bab.Nomor)
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+% Command untuk memulai bagian awal dengan penomoran Romawi kecil
+\newcommand{\frontmatter}{
+    \pagenumbering{roman}
+    \pagestyle{frontmatter}
+}
+
+% Command untuk memulai bagian utama dengan penomoran Arab
+\newcommand{\mainmatter}{
+    \cleardoublepage
+    \pagenumbering{arabic}
+    \pagestyle{mainmatter}
+}
+% Format daftar pustaka dengan single spacing
+\let\oldthebibliography\thebibliography
+\let\oldendthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]
+{\oldthebibliography{#1}\singlespacing}
+{\oldendthebibliography\doublespacing}
+
+\begin{document}
+\pagenumbering{roman}
+\pagestyle{frontmatter}
+
+% Halaman Judul
+\begin{titlepage}
+    \centering
+    \normalsize
+    \textbf{TELAAH PUSTAKA}
+    \vspace*{1cm}
+
+    \normalsize
+    \textbf{PERHITUNGAN MATRIKS JARAK PADA DOKUMEN TEKS}
+    \vspace*{1cm}
+
+    \normalsize
+    \textbf{DARI TUGAS AKHIR}
+    \vspace*{1cm}
+    
+    \normalsize
+    \textbf{KOMPARASI AKURASI KLASIFIKASI DATA TEKS MENGGUNAKAN JARAK MANHATTAN DAN JARAK JACCARD PADA ALGORITMA KNN}
+    
+    \vspace{1cm}
+    \normalsize
+    \textbf{KOMPETENSI STATISTIKA}
+
+    \vspace{1cm}
+    \centering
+    \includegraphics[width=3cm]{Logo.png}
+    
+    \vspace{1cm}
+
+    \textbf{LUH SUKMA MULYANI\\
+    2108541027\\}
+    
+    \vfill
+    
+    \normalsize
+    \textbf{PROGRAM STUDI MATEMATIKA\\
+    FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM\\
+    UNIVERSITAS UDAYANA\\
+    BUKIT JIMBARAN\\
+    2025}
+\end{titlepage}
+
+\newpage
+\renewcommand{\appendixname}{}
+\chapter*{LEMBAR PENGESAHAN TELAAH PUSTAKA}
+\addcontentsline{toc}{chapter}{LEMBAR PENGESAHAN TELAAH PUSTAKA}
+\begin{flushleft}
+    \begin{tabularx}{\textwidth}{l X}
+        Judul & : Perhitungan Matriks Jarak pada Dokumen Teks \\
+        Kompetensi & : Statistika \\
+        Nama & : Luh Sukma Mulyani \\
+        NIM & : 2108541027 \\
+        Tanggal Ujian & : \hspace{1cm} Agustus 2025 \\
+    \end{tabularx}
+\end{flushleft}
+
+\begin{center}
+    Disetujui oleh:
+\end{center}
+
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{7cm} >{\centering\arraybackslash}p{7cm}}
+    Pembimbing II & Pembimbing I \\
+    \\
+    \\
+    \\
+    \uline{Ni Ketut Tari Tastrawati, S.Si., M.Si.} & \uline{Ir. I Komang Gde Sukarasa, M.Si} \\
+    NIP 197405282002122002 & NIP 196501051991031004 \\
+\end{tabular}
+\end{center}
+\vspace{1cm}
+\begin{center}
+    Mengetahui:\\
+    Komisi Tugas Akhir\\
+    Program Studi Matematika FMIPA Unud\\
+    Ketua,\\
+    \vspace{2cm}
+    \uline{I Wayan Sumarjaya, S.Si., M.Stats.}\\
+    NIP 197704212005011001
+\end{center}
+
+\newpage
+\renewcommand{\appendixname}{}
+\chapter*{KATA PENGANTAR}
+
+\addcontentsline{toc}{chapter}{KATA PENGANTAR}
+
+Puji syukur penulis panjatkan kepada Ida Sang Hyang Widhi Wasa karena berkat rahmat-Nya, penulis dapat menyelesaikan telaah pustaka yang berjudul "Perhitungan Matriks Jarak pada Dokumen Teks" dari tugas akhir yang berjudul “Komparasi Akurasi Klasifikasi Data Teks Menggunakan Jarak Manhattan dan Jarak Jaccard pada Algoritma KNN” tepat pada waktunya. Penyusunan telaah pustaka ini dapat berjalan dengan lancar karena adanya dukungan dan bimbingan dari berbagai pihak baik secara langsung maupun tidak langsung. Oleh karena itu, penulis tidak lupa mengucapkan terima kasih kepada:
+
+\begin{enumerate}
+    \item Ibu I Gusti Ayu Made Srinadi, S.Si., M.Si. selaku Koordinator Program Studi Matematika FMIPA Universitas Udayana.
+    \item Bapak I Wayan Sumarjaya, S.Si., M.Stats. selaku Ketua Komisi Tugas Akhir Program Studi Matematika FMIPA Universitas Udayana.
+    \item Dosen Pembimbing I, Bapak Ir. I Komang Gde Sukarasa, M.Si. yang telah membimbing dengan sabar dalam penyusunan tugas akhir ini.
+    \item Dosen Pembimbing II, Ibu Ni Ketut Tari Tastrawati, S.Si., M.Si. yang telah banyak memberikan dukungan dan arahan.
+    \item Seluruh dosen Program Studi Matematika FMIPA Universitas Udayana.
+    \item Keluarga tercinta atas motivasi dan dukungan moril maupun materil.
+    \item Teman-teman seperjuangan yang telah memberikan semangat dan dukungan dalam penyusunan tugas akhir ini.
+\end{enumerate}
+
+Penulis menyadari bahwa penyusunan telaah pustaka ini masih jauh dari sempurna. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan demi perbaikan di masa mendatang.
+
+\begin{flushright}
+Bukit Jimbaran, 21 Mei 2025 \\
+\vspace{2cm}
+Penulis
+\end{flushright}
+
+\newpage
+% Table of contents
+\renewcommand{\contentsname}{DAFTAR ISI}
+\tableofcontents
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+
+\newpage
+% List of tables
+\renewcommand{\listtablename}{DAFTAR TABEL}
+\addcontentsline{toc}{chapter}{\MakeUppercase{Daftar Tabel}} % Tambahkan ke daftar isi dengan huruf kapital
+\listoftables
+
+\newpage
+% List of figures
+\renewcommand{\listfigurename}{DAFTAR GAMBAR}
+\addcontentsline{toc}{chapter}{\MakeUppercase{Daftar Gambar}} % Tambahkan ke daftar isi dengan huruf kapital
+\listoffigures
+
+% ===== BAGIAN UTAMA (Arabic numerals) =====
+\newpage
+\pagenumbering{arabic}
+\pagestyle{mainmatter}
+
+
+\chapter{PENDAHULUAN}
+\label{chap:pendahuluan}
+
+Perhitungan matriks jarak pada dokumen teks merupakan salah satu langkah penting dalam analisis data berbasis teks. Matriks jarak digunakan untuk menggambarkan hubungan antar dokumen dalam bentuk numerik, sehingga memudahkan dalam proses klasifikasi, klusterisasi, atau pencarian informasi. Perhitungan matriks jarak dilakukan dengan merepresentasikan dokumen ke dalam bentuk vektor di ruang fitur, kemudian menghitung tingkat kesamaan atau perbedaan antar vektor tersebut. Ada berbagai teknik dalam melakukan representasi teks antara lain Bag-of-Words, TF-IDF, atau \textit{embedding}. 
+
+Setelah melakukan representasi teks ke bentuk numerik, selanjutnya akan dilakukan perhitungan matriks jarak dengan berbagai metode pengukuran jarak seperti Euclidean, Manhattan, Minkowski, Chebyshev, Jaccard, Cosine dan lain sebagainya untuk menghitung seberapa mirip atau berbedanya masing-masing dokumen. Pemilihan jarak yang digunakan disesuaikan dengan karakteristik data teks dan tujuan analisisnya. Dalam pengolahan dokumen teks, penggunaan matriks jarak membantu dalam memahami struktur data dan mempermudah dalam proses pengelompokan dokumen berdasarkan kemiripan isi. Selain itu, perhitungan matriks jarak juga berperan dalam meningkatkan hasil akurasi dengan memilih jarak yang sesuai.
+      
+
+% BAB 2 Tinjauan Pustaka
+\chapter{TINJAUAN PUSTAKA}
+\label{chap:metode}
+
+\section{ \textit{Text Mining dan Document Similarity}}
+\textit{Text mining} merupakan salah satu cabang dari data mining yang berfokus pada proses ekstraksi informasi atau pengetahuan tersembunyi dari kumpulan data berbentuk teks yang tidak terstruktur. Menurut \cite{jo2018text}, \textit{text mining} didefinisikan sebagai proses untuk mengekstrak pengetahuan yang tidak secara eksplisit tersedia dalam data teks dengan tujuan menghasilkan informasi baru yang dapat digunakan secara langsung dalam pengambilan keputusan. Tugas utama dari \textit{text mining} mencakup klasifikasi, klasterisasi, dan asosiasi yang semuanya memerlukan pengukuran kesamaan antar dokumen. Salah satu konsep fundamental dalam \textit{text mining} adalah \textit{document similarity} yang mengukur tingkat kesamaan atau perbedaan antar dokumen berdasarkan konten tekstualnya \citep{CharuC.Aggarwal2018MachineLearningforText}. Meskipun tidak selalu mencerminkan makna secara semantik, pengukuran ini memungkinkan komputer menilai kedekatan antar dokumen berdasarkan fitur representasi teks, dan menjadi komponen penting dalam berbagai aplikasi seperti sistem rekomendasi, deteksi plagiarisme, dan  \textit{information retrieval}. 
+
+Pada konteks penelitian ini, \textit{document similarity} atau \textit{document distace} digunakan untuk menyusun matriks jarak, yaitu suatu matriks yang elemennya menunjukkan tingkat kesamaan atau perbedaan antara pasangan dokumen. Namun, untuk dapat mengimplementasikan pengukuran \textit{similarity} ini, dokumen teks harus terlebih dahulu dikonversi dari bentuk asli yang tidak terstruktur menjadi representasi yang dapat diproses secara komputasional melalui proses \textit{text preprocessing}. Oleh karena itu, \textit{text preprocessing} berperan penting dalam menyusun representasi teks yang bersih dan siap digunakan untuk perhitungan similarity yang selanjutnya dinyatakan dalam bentuk matriks jarak.
+
+
+\section{\textit{Text Preprocessing
+}}
+\label{sec:Preparasi Teks}
+Prapemrosesan teks bertujuan untuk menyusun data teks yang awalnya tidak terstruktur menjadi bentuk yang lebih teratur dan mudah dianalisis. Dalam teks sering kali terdapat elemen-elemen yang tidak relevan seperti tag atau tautan, kesalahan ejaan, kata-kata umum yang kurang penting seperti ``\textit{a}'', ``\textit{an}'', dan ``\textit{the}''. Selain itu, variasi kata karena perubahan bentuk kata (seperti plural atau waktu) serta kesalahan ejaan juga dapat memengaruhi analisis teks. Oleh karena itu, prapemrosesan sangat penting dilakukan untuk mempersiapkan teks sebelum dianalisis. Oleh karena itu, prapemrosesan sangat penting dilakukan untuk mempersiapkan teks sebelum dianalisis. Dengan langkah-langkah prapemrosesan meliputi \citep{CharuC.Aggarwal2018MachineLearningforText}:
+\begin{enumerate}
+    \item \textit{Case Folding (Lower Case)}: menyesuaikan huruf kapital menjadi huruf kecil untuk konsistensi.
+    \item \textit{Cleaning Data} (Pembersihan karakter dan \textit{Punctuational Removal}): menangani tanda baca (seperti tanda hubung) dengan hati-hati agar tidak mempengaruhi proses tokenisasi.
+    \item Tokenisasi: proses memecah teks menjadi unit-unit kata atau token.  
+    \item Normalisasi: proses mengubah kata tidak baku menjadi bentuk baku.
+    \item \textit{Stop Words Removal}: menghapus kata-kata umum seperti ``dan'', ``yang'', atau ``adalah'' karena tidak memberikan nilai yang informatif yang signifikan. 
+    \item \textit{stemming}: untuk menyatukan berbagai variasi kata yang berasal dari akar yang sama.
+\end{enumerate}
+
+Setelah proses pra-pemrosesan, dokumen direpresentasikan sebagai matriks istilah dokumen yang jarang (\textit{sparse}) dengan ukuran \(n \times d\), di mana $n$ merupakan jumlah dokumen dan $d$ adalah jumlah kata.
+
+
+\subsection{\textit{Lower Case}}
+Proses ini mengubah seluruh huruf dalam teks menjadi huruf kecil untuk menyamakan bentuk kata yang berbeda karena kapitalisasi. Misalnya, “\textit{Happy}” dan “\textit{happy}” akan dianggap sama. Pada implementasinya, proses ini dilakukan dengan menggunakan metode \texttt{.str.lower()} pada objek \textit{series} di Python. Sebagai contoh, kode 
+
+\begin{verbatim}
+      df_copy['content_lowercase'] = df_copy['CONTENT'].str.lower()
+\end{verbatim}
+
+Baris kode di atass akan menghasilkan kolom baru bernama \texttt{content\_} \texttt{lowercase} pada data frame \texttt{df\_copy}, yang berisi hasil konversi semua teks dari kolom \texttt{CONTENT} menjadi huruf kecil.
+
+\subsection{ \textit{Cleaning Data} (Pembersihan karakter dan \textit{Punctuational Removal})}
+Pada tahapan ini dilakukan pembersihan karakter khusus yang tidak relevan yang dapat mengganggu proses tokenisasi dan analisis.  Tujuan utama dari pembersihan ini adalah untuk menghilangkan ``\textit{noise}'' atau gangguan dalam teks, sehingga data yang dihasilkan menjadi bersih dan siap diproses pada tahap tokenisasi dan analisis lanjutan.
+
+Proses pembersihan dilakukan menggunakan fungsi \texttt{remove noise()} dan \texttt{combine\_emojis()} yang terdiri atas beberapa tahapan. Langkah pertama dimulai dengan mengurai entitas HTML seperti \texttt{\&amp;}, \texttt{\&lt;}, dan \texttt{\&gt;} menjadi karakter normal menggunakan \texttt{html.unescape}, agar makna asli teks tetap dipertahankan. Selanjutnya, tah HTML dihapus menggunakan ekspresi reguler, begitu pula karakter Unicode tersembunyi atau karakter BOM. Teks kemudian dinormalisasi dari bentuk \textit{full width} (yang umum ditemukan pada karakter Asia) ke bentuk ASCII standar menggunakan \texttt{unicodedata.normalize}, agar konsistensi kaarakter terjaga.
+
+Untuk melindungi informasi sensitif, alamat email digantikan dengan token \texttt{EMAILADDRESS}. Selanjutnya, dilakukan penggabungan domain website yang ditulis terpisah, misalnya \texttt{nama . com} menjadi \texttt{nama.com}, agar dapat dideteksi sebagai satu kesatuan \texttt{url}. Deteksi url juga dilakukan secara menyeluruh, baik yang ditulis dalam bentuk   eksplisit seperti \texttt{https://example.com} maupun yang tersamar seperti \texttt{bit.ly/abc234} dikonversi menjadi satu bentuk standar \texttt{url}. Begitu juga nama domain seperti \texttt{youtube . com}, \texttt{abc . net} diganti menjadi token  \texttt{url}.
+
+Tahapan selanjutnya adalah pemrosesan emoji dilakukan melalui fungsi \texttt{combine\_emojis()}, pertama-tama menambahkan spasi di antara emoji agar dapat terdeteksi sebagai token terpisah. Emoji kemudian diubah ke dalam bentuk deskriptif seperti \texttt{\:smile\:}. Jika beberapa emoji muncul secara berururtan maka penamaan tersebut juga dipisahkan untuk menjaga keterbacaan.  Angka-angka dalam berbagai bentuk seperti bilangan besar, desimal, angka ordinal atau notasi ilmiah diseragamkan dengan token \texttt{numeric}, dan apabila token \texttt{numeric} muncul secara berulang, hanya disimpan satu kali saja. 
+
+Tanda kurung siku seperti \texttt{you[tube]} dihapus tanpa menghilangkan isinya. Simbol-simbol khusus yang tidak bermakna secara linguistik seperti \texttt{\!\!\!\!}, \texttt{\#}, dan karakter yang diulang berlebihan disederhanakan menjadi satu karakter atau dihapus. Proses ini juga menjaga apostrof yang berada dalam kata seperti \texttt{don\'t} agar tidak memecah makna kata. Pembersihan juga mencakup penggabungan huruf yang terpisah strip seperti ``d-d-d'' menjadi ``ddd'', serta huruf yang dipisah spasi seperti ``p e a c e'' menjadi ``peace''. Semua karakter yang bukan huruf, angka, atau spasi termasuk tanda baca seperti titik, koma, dan simbol dihilangkan. Simbol-simbol yang berulang seperti \texttt{!!!} disederhanakan menjadi satu karakter. Terakhir, spasi tambahan dibersihkan sehingga teks menjadi rapi dan seragam.
+
+Proses ini dilakukan dengan bantuan fungsi \texttt{re.sub()} dari pustaka \texttt{re} (\textit{regular expressions}) di Python. Fungsi ini memiliki peran penting dalam mengganti bagian teks yang cocok dengan pola tertentu. Sintaks dasar penggunaannya adalah sebagai berikut:
+
+\begin{center}
+\texttt{re.sub(pattern, replacement, string)}
+\end{center}
+
+\begin{enumerate}
+    \item \texttt{pattern}: pola regex yang ingin dicari dalam string.
+    \item \texttt{replacement}: teks pengganti.
+    \item \texttt{string}: teks yang akan diproses.
+\end{enumerate}
+
+Contoh penggunaan:
+
+\begin{center}
+\texttt{re.sub(r'\textbackslash{}b[\textbackslash{}w.-]+@[\textbackslash{}w.-]+\textbackslash{}.\textbackslash{}w+\textbackslash{}b', `email', text)}
+\end{center}
+
+Kode di atas mencari semua bentuk email dan menggantinya dengan token \texttt{email}. Penggunaan \texttt{re.sub()} memungkinkan pencocokan dan manipulasi teks yang kompleks secara efisien, seperti mendeteksi url, tag HTML, angka, dan simbol yang tidak perlu.
+Dengan serangkaian tahapan ini, data teks yang sebelumnya tidak terstruktur dan mengandung banyak gangguan dapat dibersihkan menjadi bentuk yang lebih konsisten dan siap untuk proses analisis lanjutan.
+
+
+\subsection{Tokenisasi}
+Tokenisasi merupakan tahapan krusial dalam pemrosesan bahasa alami. Token didefinisikan sebagai unit-unit teks bermakna. Berikut adalah contoh komentar:
+\\
+\texttt{``\textit{i check back often to help reach $2 \times 10^{9}$ views and I avoid  wat-}\\
+\textit{ching Baby}''} \\
+dapat diuraikan sebagai berikut:  ``\textit{i}'', ``\textit{check}'', ``\textit{back}'', ``\textit{often}'', ``\textit{to}'', ``\textit{help}'', ``\textit{reach}'', ``2x10\^{}9'', ``\textit{views}'', ``\textit{and}'', ``\textit{I}'', ``\textit{avoid}'', ``\textit{watching}'', dan ``\textit{baby}''. Adapun tantangan dari tokenisasi, yaitu pada saat terdapat struktur teks yang tidak baku seperti url, ekspresi matematika, atau karakter unicode yang tidak standar.
+
+Dalam penelitian ini, proses tokenisasi akan dilakkan setelah teks dibersihkan dan dikonversi ke bentuk urutan karakter. Untuk melakukan tokenisasi, digunakan pustaka python \texttt{nltk} yang menyediakan fungsi \texttt{word\_tokenize}. Berikut adalah contoh implementasi sederhana untuk tokenisasi menggunakan \texttt{nltk}:
+
+\begin{verbatim}
+import nltk 
+nltk.download(`punkt')
+from nltk.tokenize import word_tokenize 
+def word_tokenization(text):
+    return word_tokenize(text) 
+\end{verbatim}
+
+
+Pada kode tersebut, fungsi \texttt{word\_tokenize} akan memecah teks input menjadi token-token berupa kata atau simbol yang bermakna. Misalnya, jika diberikan kalimat sebagai input, fungsi ini akan mengembalikan daftar kata-kata yang sudah dipisahkan. Token-token yang diperoleh dari tahap ini menjadi dasar dalam representasi teks untuk analisis atau pemodelan berikutnya.
+
+\subsection{Normalisasi}
+Setelah data teks melalui proses \textit{lower case}, \textit{cleaning}, dan tokenisasi, langkah selanjutnya adalah normalisasi kata, yaitu proses mengubah kata-kata tidak baku seperti slang, singkatan, atau kesalahan ketik (\textit{typos}), menjadi bentuk kata yang baku dan konsisten \citep{article}. Normalisasi merupakan tahapan krusial dalam pemrosesan teks informal, seperti komentar pengguna pada platform YouTube, yang banyak mengandung variasi penulisan yang tidak sesuai kaidah bahasa standar. Dalam penelitian ini, proses normalisasi dilakukan menggunakan kamus normalisasi yang dikembangkan secara manual oleh peneliti. Kamus ini disusun berdasarkan observasi langsung terhadao data yang digunakan, dengan mencatatat bentuk-bentuk kata tidak baku yang sering muncul, lalu menentukan padanan kata bakunya secara kontekstual. Contoh normalisasi yang dilakukan antara lain "\textit{u}" menjadi "\textit{you}", "\textit{luv}" menjadi "\textit{love}",dan "\textit{plzz}" menjadi "\textit{please}". 
+
+Normalisasi dilakukan setelah tokenisasi agar setiap token dapat diperiksa dan dimodifikasi secara individual sesuai kamus. Tujuan dari tahapan ini adalah meningkatkan konsistensi representasi teks serta mengurangi dimensi fitur unik, yang pada akhirnya akan memperbaiki performa dan efisiensi pada tahapan \textit{vectorization} maupun \textit{text classification}. Normalisasi kata juga membantu mengurangi \textit{sparsity} data dan meningkatkan akurasi dalam pemodelan teks berbasis \textit{machine learning}.
+
+
+\subsection{\textit{Stopwords Removal}}
+\textit{Stopwords} adalah kata umum dalam bahasa yang kurang memiliki nilai pembeda dalam klasifikasi teks, seperti (``\textit{the}'', ``\textit{is}'', ``\textit{in}''). Frekuensi kemunculan kata yang cenderung seragam di berbagai kategori topik. Oleh karena itu, penghapusan \textit{stopwords} kerap dilakukan untuk meningkatkan efisiensi pemrosesan data dalam analisis.
+
+Pada proses ini, penulis akan menggunakan bantuan pustaka \textit{Natural Language Toolkit} (NLTK) untuk menghapus \textit{stopwords} dari data teks. Berikut adalah contoh implementasi sederhana untuk \textit{stopwords}:
+
+\begin{verbatim}
+nltk.download(`stopwords')
+def remove_stopwords(text): 
+    stops = set(stopwords.words("english"))
+    if isinstance(text, list):
+        text = [w for w in text if w.lower() not in stops]
+    return text
+\end{verbatim}
+
+Fungsi tersebut dimulai dengan mengunduh daftar \textit{stopwords} dalam bahasa Inggris melalui \texttt{nltk.download('stopwords')}. Selanjutnya, untuk setiap elemen dalam list input, kata-kata yang termasuk dalam daftar \textit{stopwords} akan dihapus. Dengan cara ini, hanya kata-kata yang dianggap mengandung informasi penting yang dipertahankan, sehingga data teks yang dihasilkan lebih bersih dan siap digunakkan pada analisis berikutnya.
+
+\subsection{\textit{Stemming}}
+\textit{Stemming} merupakan proses penggabungan kata-kata yang memiliki akar yang sama. Misalnya, bentuk tunggal, jamak, atau berbagai \textit{tense} dari suatu kata disatukan karena tidak mengubah makna semantisnya dalam konteks \textit{text mining}. Contohnnya, kata ``\textit{run}'', ``\textit{running}'', ``\textit{runs}'', dan ``\textit{ran}'' seluruhnya berasal dari akar kata ``\textit{run}'' dan sebaliknya dikonsolidasikan menjadi satu istilah.
+
+Dalam penelitian ini, proses \textit{stemming} dilakukan menggunakan pustaka \textit{Natural Language toolkit}(NLTK) dengan metode \textit{Snowball Stemmer} untuk bahasa inggris. Berikut merupakan code yang digunakan:
+
+\begin{verbatim}
+# Mendownload stemmer untuk bahasa Inggris
+stemmer = SnowballStemmer("english")
+# Fungsi untuk stemming setiap kata dalam list
+def stemmed_wrapper(document): 
+    return [stemmer.stem(term) for term in document]
+\end{verbatim}
+
+Kode di atas dimulai dengan inisialisasi objek \texttt{SnowballStemmer} untuk bahasa inggris. Selanjutnya, dibuat sebuah fungsi bernama \texttt{stemmed\_wrapper} yang menerima masukan berupa dokumen dalam bentuk daftar kata, kemudian mengembalikan daftar baru berisi kata-kata yang telah melalui proses \textit{stemming}. Dengan demikian, semua bentuk turunan dari suatu kata dapat dikembalikan ke bentuk dasarnya, sehingga membantu mengurangi dimensi dan meningkatkan efisiensi teks selanjutnya.
+
+\section{Representasi Dokumen Teks}
+\label{sec:Representasi}
+
+\subsection{\textit{Bag of Words}}
+\label{subsec:BoW}
+\textit{Bag of Words} merupakan salah satu pendekatan dasar yang digunakan dalam representasi teks ke dalam bentuk numerik dalam bidang pemrosesan bahasa alami (\textit{Natural Language Processing}). BoW merepresentasikan sebuah dokumen sebagai kumpulan kata-kata, tanpa memperhatikan tata urutan kata dan struktur gramatikal. Dalam model ini, informasi yang dipertahankan hanyalah frekuensi kemunculan kata dalam dokumen \citep{lane2019nlp} 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{bag of words.png}
+    \caption{Contoh representasi \textit{Bag of Words} dari sebuah kalimat.}
+    \label{fig:bow_example}
+\end{figure}
+
+
+Sebagai ilustrasi, Gambar \ref{fig:bow_example} menunjukkan bagaimana pendekatan BoW bekerja. Dalam gambar tersebut, kalimat lengkap tidak dianalis berdasarkan susunan atau struktur katanya. Sebaliknya, setiap kata yang muncul dari keseluruhan kutipan dihitung berdasarkan jumlah kemunculannya. Misalnya, kata ``\textit{view}'' muncul sebanyak tiga kali, ``\textit{video}'', dan ``\textit{get}'' masing-masing muncul dua kali, sedangkan kata-kata lain seperti ``\textit{actual}'', ``\textit{day}'', ``\textit{everi}'', ``\textit{mean}'', ``\textit{much}'', ``\textit{num}'', ``\textit{peopl}'', ``\textit{popular}'', ``\textit{see}'', ``\textit{think}'', ``\textit{want}'', dan ``\textit{youtub}''
+muncul satu kali. Representasi ini ditampilkan dalam bentuk daftar kata disertai frekuensinya dan digunakan untuk mempermudah analisis tanpa mempertimbangkan tata urut kalimat.
+
+\subsection{\textit{Term Frequency-Invers Document Frequency} (TF-IDF)}
+\label{subsec:TF-IDF}
+\textit{Term Frequency-Invers Document Frequency} merupakan salah satu metode representasi teks yang banyak digunakan dalam \textit{text mining} dan \textit{information retrieval} yang digunakan untuk mengukur tingkat kepentingan suatu kata terhadap sebuah dokumen dalam suatu kumpulan dokumen (korpus). Bobot suatu kata dalam dokumen dihitung dari dua komponen utama, yaitu \textit{Term Frequency} (TF) dan \textit{Invers Document Frequency} (IDF) \citep{lane2019nlp}. \textit{Term Frequency} mengukur seberapa sering suatu kata muncul dalam sebuah dokumen, dan \textit{Invers Document Frequency} mengukur seberapa jarang kata muncul di seluruh dokumen (korpus). Berikut adalah tahapan dalam melakukan pembobotan kata menggunakan TF-IDF:
+
+\textit{Term Frequency} (TF) digunakan untuk mengukur seberapa sering suatu kata \textit{term} ke-$i$ muncul dalam dokumen $j$ relatif terhadap total jumlah kata dalam dokumen tersebut. Nilai TF memberikan informasi mengenai tingkat kepentingan suatu kata dalam sebuah dokumen tertentu. Rumus perhitungan TF adalah sebagai berikut:
+\begin{equation}
+    \text{tf}_{ij} = \frac{f_{ij}}{\sum_{k=1}^{n} f_{kj}}
+    \label{eq:TF}
+\end{equation}
+
+dengan, $f_{ij}$ adalah jumlah kemunculan kata ke-$i$ dalam dokumen ke-$j$, dan ${\sum_{k=1}^{n} f_{kj}}$ adalah total jumlah kata dalam dokumen ke-$j$. Semakin sering suatu kata muncul dalam dokumen, maka semakin tinggi nilai TF nya, yang menandakan bahwa kata tersebut lebih penting dalam dokumen tersebut.
+
+\textit{Invers Document Frequency} (IDF) digunakan untuk mengukur seberapa penting suatu kata dalam keseluruhan kumpulan dokumen (korpus). IDF memberikan bobot yang lebih tinggi pada kata-kata yang jarang muncul di banyak dokumen, karena kata-kata tersebut dianggap lebih unik dan informatif. Rumus perhitungan IDF adalah sebagai berikut:
+\begin{equation}
+    idf_i = \log\left(\frac{N}{df_i}\right)
+    \label{eq:IDF}
+\end{equation}
+\\
+dengan, $N$ adalah jumlah total dokumen dalam korpus, dan $df_i$ adalah jumlah dokumen yang mengandung kata ke-$i$. Jika sebuah kata muncul di hampir semua dokumen, maka nilai IDF-nya akan rendah karena dianggap umum. Sebaliknya, jika hanya sedikit dokumen yang mengandung kata tersebut, nilai IDF akan tinggi.
+
+\textit{Term Frequncy-Inverse Document Frequency} (TF-IDF) merupakan hasil perkalian antara nilai TF dan IDF. Nilai ini digunakan untuk mengukur tingkat kepentingan suatu kata dalam sebuah dokumen relatif terhadap keseluruhan dokumen dalam korpus. TF-IDF memberikan bobot yang tinggi pada kata-kata yang sering muncul dalam sebuah dokumen tetapi jarang ditemukan di dokumen lainnya. Rumus perhitungan TF-IDF adalah sebagai berikut:
+
+\begin{equation}
+    w_{ij} = tf_{ij} \times idf_i
+    \label{eq:TFIDF}
+\end{equation}
+dengan, $w_{ij}$ adalah bobot TF-IDF untuk kata ke-$i$ dalam dokumen ke-$j$, $tf_{ij}$ adalah nilai \textit{Term Frequency} dari kata ke-$i$ dalam dokumen ke-$j$, dan $idf_i$ adalah nilai \textit{Inverse Document Frequency} dari kata ke-$i$. 
+
+Dalam penelitian ini, proses pembobotan TF-IDF diimplementasikan dengan menggunakan pustaka \texttt{scikit-learn} \citep{raschka2022ml}. Dimana implementasi TF-IDF dalam \texttt{scikit-learn} memiliki perbedaan formula dari TF-IDF standar. Pusta ini menyediakan dua kelas utama, yaitu \texttt{TfidfTransformer}, yang mengubah frekuensi kemunculan kata mentah menjadi bobot TF-IDF, dan \texttt{TfidfVectorizer}, yang secara otomatis menangani proses tokenisasi, perhitungan TF, serta transformasi IDF dalam satu langkah. Rumus IDF yang digunakan oleh \textit{scikit-learn} adalah:
+\begin{equation}
+    idf(t)= \log\left(\frac{1+n_d}{1+df(t)}\right) + 1
+    \label{eq:IDF2}
+\end{equation}
+dimana $n_d$ adalah jumlah total dokumen, dan $df(t)$ adalah jumlah dokumen yang memuat kata ke-$t$. Penambahan angka 1 pada pembilang dan penyebut dilakukan untuk mencegah pembagian nol. Selanjutnya, bobot TF-IDF dihitung dengan cara mengalikan nilai \texttt{tf} dengan \texttt{idf}:
+\begin{equation}
+    w(t,d)=tf(t,d) \times idf(t)
+     \label{eq:TFIDF2}
+\end{equation}
+
+Selain itu, \texttt{TfidfTransformer} juga menerapkan normalisasi L2 terhadap vektor hasil TF-IDF. Normalisasi ini mengubah vektor asli menjadi vektor dengan panjang satu dengan cara membaginya terhadap norma L2:
+\begin{equation}
+    {v}_{\text{norm}} = \frac{{v}}{\|{v}\|_2}
+     \label{eq:L2}
+\end{equation}
+
+Normalisasi ini penting agar panjang dokumen tidak mempengaruhi perhitungan jarak dalam algoritma seperti K Nearest Neighbors (KNN), sehingga yang lebih diperhatikan adalah bobot relatif kata, bukan jumlah katanya. Dengan pendekatan ini, TF-IDF menghasilkan representasi numerik teks yang efisien, di mana setriap dokumen diubah menjadi vektor berdimensi tinggi. Vektor-vektor tersebut selanjutnya digunakan sebagai masukan utama dalam algoritma klasifikasi KNN untuk mengukur kesamaan antar dokumen, dengan membandingkan performa menggunaan beberapa metrik jarak seperti Manhattan dan Jaccard, yang akan dianalisis lebih lanjut pada penelitian ini.
+
+\section{Himpunan}
+Himpunan adalah kumpulan objek yang terdefinisi dengan jelas, di mana setiap objek disebut sebagai anggota atau elemen himpunan tersebut \citep{Kenneth2000Handbook}. Notasi standar yang digunakan untuk menyatakan keanggotaan adalah $x \in A$, yang berarti objek $x$ adalah anggota dari himpunan $A$, dan sebaliknya $x \notin A$, berarti $x$ bukan anggota dari $A$. Himpunan dapat direpresentasikan dengan beberapa cara. Pertama, dengan Metode Roster, yaitu mendaftarkan semua elemen himpunan di dalam kurung kurawal, misalnya, $S = \{a_1, a_2, \ldots, a_n\}$
+. Kedua, dengan Predikat Pendefinisi, yaitu mendefinisikan himpunan dalam bentuk $S = \{ x \mid P(x) \}$, yang berarti $S$ adalah himpunan semua objek $x$ (dalam domain yang relevan) sedemikian sehingga predikat $P(x)$ bernilai benar. Sebuah himpunan yang tidak memiliki elemen sama sekali disebut himpunan kosong (\textit{null set} atau \textit{empty set}), yang dinotasikan dengan $\emptyset$ atau $\{\}$.
+
+Setelah sebuah himpunan didefinisikan, seringkali penting untuk mengetahui ``ukurannnya'', sebuah konsep  yang diformalkan sebagai kardinalitas. \cite{Kenneth2000Handbook} mendefinisikan kardinalitas $|S|$ dari sebuah himpunan hingga $S$ sebagai jumlah elemen dalam $S$. Dengan kata lain, kardinalitas adalah  jumlah elemen unik yang terkandung dalam suatu himpunan. Sebagai contoh, jika himpunan $A = {jeruk, manggis,anggur}$, maka kardinalitas $A$, dapat ditulis $|A|=3$
+
+\subsection{Operasi Dasar pada Himpunan}
+\subsubsection{Irisan (\textit{Intersection})} Irisan dua himpunan, $A$ dan $B$, didefinisikan sebagai himpunan  
+\[
+  A \cap B = \{ x \mid x \in A \land x \in B \}
+\]
+Defini ini menyatakan bahwa himpunan $A \cap B$ berisi semua elemen dari kedua himpunan $A$ dan himpunan $B$
+\subsubsection{Gabungan Himpunan (\textit{Union})}
+Gabungan dari dua himpunan, $A$ dan $B$, didefinisikan sebagai himpunan   
+\[
+  A \cup B = \{ x \mid x \in A \lor x \in B \}
+\]
+Berdasarkan definisi tersebut himpunan $A \cup B$ berisi semua elemen $x$ yang merupakan bagian anggota dari himpunan $A$, atau anggota dari himpunan $B$, atau anggota dari keduanya.
+
+
+\section{Matriks}
+Matriks merupakan susunan bilangan yang ditata dalam bentuk persegi panjang dan ditempatkan di dalam tanda kurung siku \citep{Boyd2018IntroductionAlgebra}. Salah satu aspek penting dalam sebuah matriks adalah ukurannya atau dimensinya, yang menunjukkan jumlah baris dan kolom penyusunannya. Sebagai contoh:
+
+\[
+A = \begin{bmatrix}
+2&3&5\\
+5&1&4\\
+\end{bmatrix}
+\]
+
+Matriks $A$ terdiri atas dua baris dan tiga kolom, sehingga dimensinya adalah $2 \times 3$. Umumnya, sebuah matriks dengan $m$ baris dan $n$ kolom disebut matriks berukuran $m \times n$. Setiap elemen dalam matriks disebut entri, yang terletak pada posisi baris ke-$i$ dan kolom ke-$j$, serta dinyatakan sebagai $A_{ij}$, yang berarti elemen pada baris ke-$i$ dan kolom ke-$j$ dari matriks $A$.
+
+Jika suatu matriks memiliki jumlah baris yang sama dengan jumlah kolom, maka matriks tersebut disebut sebagai matriks persegi. Matriks persegi berukuran $n \times n$ dikatakan memiliki ordo $n$. Contoh berikut menggambarkan dua matriks persegi:
+
+\[
+B = \begin{bmatrix}
+4 & 1 \\
+5 & 2 \\
+\end{bmatrix}
+,\quad
+C = \begin{bmatrix}
+3 & 1 & 4 \\
+5 & 2 & 9 \\
+2 & 4 & 1 \\
+\end{bmatrix}
+\]
+
+Matriks $B$ memiliki ukuran $2 \times 2$, sedangkan matriks $C$ berukuran $3 \times 3$. Karena jumlah baris dan kolom pada masing-masing matriks tersebut sama, keduanya termasuk dalam kategori matriks persegi.
+
+\subsection{Kolom dan Baris pada Matriks}
+Dalam representasi matriks blok, sebuah matriks berukuran $m \times n$ dapat dituliskan sebagai susunan blok yang terdiri atas satu baris dan $n$ kolom. Dalam hal ini, matriks $A$ dapat dinyatakan sebagai:
+
+\[
+A=
+\begin{bmatrix}
+    a_1 & a_2 & \ldots & a_n
+\end{bmatrix}
+\]
+
+di mana setiap $a_j$ merupakan vektor kolom berdimensi $m \times 1$, yaitu kolom ke-$j$ dari matriks $A$. Dengan kata lain, sebuah matriks berukuran $m \times n$ dapat dipandang sebagai gabungan dari $n$ vektor kolom.
+
+Sebaliknya, matriks yang sama juga dapat direpresentasikan sebagai matriks blok dengan satu kolom dan $m$ baris blok:
+
+\[
+A = \begin{bmatrix}
+    b_1\\
+    b_2\\
+    \vdots\\
+    b_m
+\end{bmatrix}
+\]
+
+di mana setiap $b_i$ merupakan vektor baris berdimensi $1 \times n$, yaitu baris ke-$i$ dari matriks $A$. Dalam bentuk ini, matriks dipandang sebagai kumpulan vektor baris yang disusun secara vertikal sebanyak $m$ baris.
+
+\subsection{Penjumlahan Matriks}
+Dua buah matriks dapat dijumlahkan apabila memiliki dimensi yang sama, artinya jumlah baris dan kolom dari kedua matriks tersebut harus identik. Proses penjumlahan dilakukan dengan cara menjumlahkan elemen-elemen yang posisinya bersesuaian pada masing-masing matriks. Sebagai ilustrasi, misalkan terdapat dua matriks $A$ dan $B$, masing-masing berukuran $3 \times 2$, yaitu:
+
+\[
+A = \begin{bmatrix}
+4 & 1 \\
+5 & 2 \\
+3 & 6
+\end{bmatrix}
+,\quad
+B = \begin{bmatrix}
+3 & 7 \\
+4 & 1 \\
+2 & 8\\
+\end{bmatrix}
+\]
+
+Penjumlahan antara matriks $A$ dan $B$ dilakukan dengan menjumlahkan elemen pada posisi yang sama dari kedua matriks, sehingga diperoleh:
+
+\[
+    A + B = \begin{bmatrix} 
+                4+3 & 1+7 \\ 
+                5+4 & 2+1 \\ 
+                3+2 & 6+8 
+            \end{bmatrix} = 
+            \begin{bmatrix} 
+                7 & 8 \\ 
+                9 & 3 \\
+                5 & 14 
+            \end{bmatrix}
+\]
+
+Dengan demikian, hasil  penjumlahan dua matriks berdimensi sama adalah matriks baru yang memiliki dimensi serupa, di mana setiap elemennya merupakan hasil penjumlahan dari elemen-elemen yang bersesuaian.
+
+\subsection{Perkalian Skalar dan Matriks}
+Perkalian skalar pada matriks memiliki konsep yang mirip dengan perkalian skalar pada vektor, yakni setiap elemen dalam matriks akan dikalikan dengan suatu nilai skalar tertentu. Jika diberikan sebuah matriks $A$ dan skalar $k$, maka hasil perkalian skalar $kA$ adalah sebuah matriks baru yang setiap elemennya merupakan hasil perkalian antara elemen matriks $A$ dengan skalar $k$. Sebagai contoh, misalkan terdapat skalar $k = -3$ dan matriks \[
+A = \begin{bmatrix}
+    1 & 4\\
+    5 & 3\\
+    6 & -2
+\end{bmatrix}
+\]
+
+maka hasil dari $kA$ adalah
+\[
+-3 \times A = \begin{bmatrix}
+    (-3) \times 1 & (-3) \times 4\\
+    (-3) \times 5 & (-3) \times 3\\
+    (-3) \times 6 & (-3) \times -2
+\end{bmatrix} = \begin{bmatrix}
+    -3 & -12\\
+    -15 & -9\\
+    -18 & 6
+\end{bmatrix}
+\]
+
+Dengan demikian, setiap elemen matriks asli dikalikan dengan nilai skalar sehingga membentuk matriks hasil baru dengan ukuran yang sama.
+
+\subsection{Transpos Matriks}
+Jika sebuah matriks $A$ berukuran $m \times n$, maka transpos dari matriks tersebut, yang dilambangkan dengan $A^T$, merupakan matriks baru berukuran $n \times m$. Elemen-elemen dari matriks $A^T$ diperoleh dengan menukar posisi baris dan kolom dari matriks $A$, sehingga elemen ($i,j$) pada $A^T$ sama dengan elemen ($j,i$) pada $A$. Dengan kata lain, proses transpose dilakukan dengan memutar posisi baris menjadi kolom dan kolom menjadi baris. Sebagai ilustrasi, misalkan diberikan matriks:
+\[
+A = \begin{bmatrix}
+    2 & 1 & 4\\
+    3 & 6 & 1
+\end{bmatrix}
+\]
+\\
+Maka transpos dari matriks $A$ adalah:
+
+\[
+A^T = \begin{bmatrix}
+    2 & 3\\
+    1 & 6\\
+    4 & 1
+\end{bmatrix}
+\]
+
+Transpos matriks juga berfungsi untuk mengubah vektor baris menjadi vektor kolom, dan sebaliknya. Notasi $a^T$ sering digunakan untuk menyatakan transpos dari vektor kolom $a$, sehingga menghasilkan sebuah vektor baris. sebagai contoh, baris kedua dari matriks $A$ diatas, yaitu 
+\[
+A = \begin{bmatrix}
+    2 & 1 & 4\\
+    3 & 6 & 1
+\end{bmatrix}
+\]
+dapat direpresentasikan sebagai vektor kolom transpos, yakni $(3,6,1)^T$.
+
+\subsection{\textit{Document Term} Matriks}
+Dalam analisis teks, sebuah korpus terdiri atas $N$ dokumen dapat direpresentasikan dalam bentuk matriks dokumen kata. Matriks ini merupakan matriks berdimensi $A_{N \times n}$, di mana $n$ menyatakan jumlah kosakata (kata unik) yang terdapat dalam kamus yang digunakan. Setiap elemen $A_{ij}$ pada matriks tersebut menunjukkan frekuensi kemunculan kata ke-$i$ pada dokumen ke-$j$.
+
+Setiap baris dalam matriks dokumen kata merepresentasikan satu dokumen dalam bentuk vektor frekuensi kata. Dengan demikian, baris-baris dalam matriks tersebut adalah $a_1^T, a_2^T, \ldots, a_N^T$, yang masing-masing menggambarkan sebaran kata dalam dokumen 1 hingga $N$. Tidak hanya baris, kolom-kolom dalam matriks dokumen kata juga memuat informasi penting. Kolom ke-$i$ menyatakan distribusi kemunculan kata ke-$i$ di seluruh dokumen dalam korpus. Kolom ini berbentuk vektor berdimensi $N$, yang memperlihatkan bagaimana kata tersebut tersebar pada setiap dokumen. Sebagai ilustrasi, misalkan terdapat korpus yang terdiri atas tiga dokumen dan empat kata dalam kamus, maka matriks dokumen 
+kata dapat dinyatakan sebagai berikut:
+\[
+A = \begin{bmatrix}
+    2 & 0 & 1 & 0\\
+    0 & 3 & 0 & 2\\
+    1 & 2 & 0 & 0
+\end{bmatrix}
+\]
+\\
+Penjelasan dari matriks diatas adalah,sebagai berikut:
+\begin{enumerate}
+    \item Baris pertama $(2,0,1,0)$ menunjukkan bahwa dokumen pertama mengandung kata pertama sebanyak dua kali, kata ke tiga sebanyak satu kali.
+    \item Baris kedua $( 0,3,0,2)$ menunjukkan bahwa dokumen kedua mengandung kata kedua sebanyak tiga kali dan kata keempat sebanyak dua kali.
+    \item Baris ketiga $(1,2,0,0)$ menunjukkan bahwa dokumen ketiga mengandung kata pertama sebanyak satu kali dan kata ke dua sebanyak dua kali.
+\end{enumerate}
+
+Adapun informasi yang ditampilkan oleh kolom-kolom dalam matriks tersebut adalah:
+\begin{enumerate}
+    \item Kolom pertama $(2,0,1)$ menunjukkan bahwa kata pertama muncul dua kali di dokumen pertama, tidak muncul di dokumen kedua, dan muncul satu kali di dokumen ketiga.
+    \item Kolom keuda $(0,3,2)$ menunjukkan bahwa kata kedua tidak muncul di dokumen pertama, muncul tiga kali pada dokumen kedua, dan muncul sebanyak dua kali pada dokumen ketiga.
+    \item Kolom ketiga $(1,0,0)$ menunjukkan bahwa kata ketiga hanya muncul satu kali pada dokumen pertama, dan tidak muncul pada dua dokumen lainnya.
+    \item Kolom keempat $(0,2,0)$ menunjukkan bahwa kata keempat hanya muncul dua kali di dokumen kedua, dan tidak muncul pada dua dokumen lainnya.
+\end{enumerate}
+
+Melalui representasi matriks dokumen kata seperti ini, proses analisis teks dan eksplorasi data teks menjadi lebih sistematis dan terarah. Matriks tersebut memungkinkan identifikasi pola kemunculan kata, keterkaitan antar dokumen, serta informasi lainnya yang relevan dalam pengolahan data teks.
+
+
+ \section{Vektor}
+Skalar merupakan besaran yang hanya memiliki nilai saja, tanpa melibatkan arah \citep{Anton2014ElementaryAlgebra}. Karena tidak memiliki orientasi, skalar dianggap sebagai besaran yang hanya menunjukkan seberapa besar sesuatu itu. Dalam praktiknya, skalar sering digunakan sebagai konstanta dalam operasi-operasi matematika seperti penjumlahan, pengurangan, perkalian, dan pembagian.
+
+Sementara itu, vektor adalah besaran yang memiliki dua sifat utama, yaitu nilai dan arah. Dalam matematika, vektor biasanya digambarkan sebagai garis lurus yang menunjukkan arah dan panjang tertentu. Notasi untuk vektor umumnya menggunakan huruf tebal seperti \textbf{a,b,v,w,x}, sedangkan skalar dituliskan dengan huruf miring seperti \textit{a, k, v, atau w}.  Jika ingin menyatakan suatu vektor dengan titik awal di \textit{A} dan titik akhir di \textit{B}, maka notasinya dapat dituliskan sebagai:
+\[
+    \textbf{v}=\overrightarrow{AB}
+\]
+Visualisasi dari vektor tersebut dapat digambarkan sebagai berikut
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    % Define the points A and B
+    \coordinate (A) at (1, 1);
+    \coordinate (B) at (4, 3);
+
+    % Draw points A and B
+    \fill (A) circle[radius=2pt] node[below left] {$A$};
+    \fill (B) circle[radius=2pt] node[above right] {$B$};
+
+    % Draw the vector AB
+    \draw[->, thick] (A) -- (B) node[midway, above] {$\overrightarrow{AB}$};
+    \end{tikzpicture}
+    \caption{Ilustrasi Vektor $\overrightarrow{AB}$.}
+    \label{fig:vektor}
+\end{figure}
+
+Di mana arah panah menunjukkan arah dari titik \textit{A} menuju titik \textit{B}, dan panjang garis menunjukkan besaran dari vektor tersebut.
+
+\subsection{Operasi Vektor Pada $\mathbb{R}^n$}
+Secara umum, $\mathbb{R}^n$ merujuk pada ruang vektor berdimensi $n$, yang dapat dibayangkan sebagai ruang dengan $n$ sumbu atau arah. Setiap vektor \textbf{v} yang berada dalam ruang ini dapat dituliskan dalam bentuk:
+
+\[
+\mathbf{v} = (v_1,v_2,\ldots,v_n)
+\]
+
+Operasi-operasi yang berlaku pada vektor dalam $\mathbb{R}^n$ secara prinsip serupa dengan operasi yang terdapat pada ruang berdimensi tiga, yaitu $\mathbb{R}^3$, namun diperluas agar mencakup dimensi yang lebih tinggi. Beberapa jenis operasi yang umum dilakukan baik di $\mathbb{R}^n$ dan di $\mathbb{R}^3$ antara lain:
+
+\subsubsection{Penjumlahan Vektor} 
+Dua buah vektor dalam ruang berdimensi $n$ dapat dijumlahkan dengan cara menjumlahkan setiap komponen yang bersesuaian dari kedua vektor tersebut. Jika $\mathbf{v} = (v_1, v_2, \ldots, v_n) \quad \text{dan} \quad \mathbf{w} = (w_1, w_2, \ldots, w_n)$, maka:
+
+\[
+    \mathbf{v} + \mathbf{w} = (v_1 + w_1, v_2 + w_2, \ldots, v_n + w_n)
+\]
+
+Dalam konteks geometris, terdapat apa yang disebut aturan segitiga dalam penjumlahan vektor. Aturan ini menyatakan bahwa jika dua buah vektor \textbf{v} dan \textbf{w} berada dalam $\mathbb{R}^2$ atau $\mathbb{R}^3$, dan disusun sedemikian rupa sehingga ujung vektor \textbf{v} menjadi titik pangkal vektor \textbf{w}, maka hasil penjumlahan \textbf{v + w} dapat direpresentasikan oleh sebuah panah yang menghubungkan titik awal \textbf{v} langsung ke ujung \textbf{w}.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \draw[->,thick,blue] (0,0) -- (3,2) node[midway, below] {$\mathbf{v}$};
+        \draw[->,thick,red] (0,0) -- (2,3) node[midway, left] {$\mathbf{w}$};
+        \draw[->,thick,green] (0,0) -- (5,5) node[midway, below right] {$\mathbf{v} + \mathbf{w}$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \draw[->, thick, blue] (0,0) -- (3,2) node[midway, below] {$\mathbf{v}$};
+        \draw[->, thick, red] (0,0) -- (2,3) node[midway, left] {$\mathbf{w}$};
+        \draw[->, thick, green] (0,0) -- (5,5) node[midway, below right] {$\mathbf{v} + \mathbf{w}$};
+        \draw[->, thick, red] (3,2) -- (5,5) node[midway, left] {$\mathbf{w}$};
+        \draw[->, thick, blue] (2,3) -- (5,5) node[midway, below] {$\mathbf{v}$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \draw[->, thick, red] (0,0) -- (2,3) node[midway, below left] {$\textbf{w}$};
+        \draw[->, thick, blue] (2,3) -- (5,5) node[midway, below right] {$\textbf{v}$};
+        \draw[->, thick, green] (0,0) -- (5,5) node[midway, below right] {$\textbf{w} + \textbf{v}$};
+    \end{tikzpicture}
+    \caption{Penjumlahan Vektor}
+    \label{fig:Penjumlahan Vektor}
+\end{figure}
+
+Selain sebagai proses penjumlahan, operasi ini juga dapat dipahami sebagai proses \textit{translasi titik}. Translasi merupakan suatu transformasi geometri yang memindahkan posisi suatu titik atau objek dalam ruang ke lokasi baru, tanpa mengubah bentuk, orientasi, maupun ukuran. Dengan kata lain, translasi menggeser titik-titik dalam ruang secara sejajar dan searah sesuai arah serta besar vektor yang digunakan.
+
+\subsubsection{Pengurangan Vektor}
+Operasi pengurangan antara dua vektor, yang biasa dilambangkan dengan  \( \mathbf{w} - \mathbf{v} \), pada dasarnya merupakan penjumlahan antara vektor \(\mathbf{w}\) dengan lawan dari vektor \(\mathbf{v}\). Vektor negatif \(-\mathbf{v}\) merupakan vektor yang memiliki besar (magnitudo) yang sama dengan \(\mathbf{v}\), tetapi dengan arah yang berlawanan. Oleh karena itu, pengurangan \(\mathbf{w} - \mathbf{v}\) dapat dipahami sebagai penjumlahan \(\mathbf{w} + (- \mathbf{v})\). Pada ruang vektor berdimensi \(n\), termasuk ruang dua dimensi ($\mathbb{R}^2$) maupun tiga dimensi ($\mathbb{R}^3$), pengurangan dilakukan dengan cara mengurangkan komponen-komponen yang bersesuaian dari kedua vektor. Secara umum, pengurangan antara dua vektor $\mathbf{v} = (v_1, v_2, \ldots, v_n) \quad \text{dan} \quad \mathbf{w} = (w_1, w_2, \ldots, w_n)$ dituliskan sebagai berikut:
+\[
+\mathbf{v} - \mathbf{w} = (\mathbf{v_1-w_1, v_2-w_2,\ldots,v_n-w_n})
+\]
+
+Sebagai ilustrasi, proses pengurangan dua vektor pada ruang dua dimensi ($\mathbb{R}^2$) dapat divisualisasikan dalam Gambar ~\ref{fig:Pengurangan Vektor}, yang menunjukkan bagaimana arah dan besar dari vektor hasil pengurangan diperoleh berdasarkan posisi relatif dari kedua vektor.
+\begin{figure}[h!]
+    \centering
+        \begin{tikzpicture}
+            \coordinate (O) at (0,0);
+            % Tambahkan titik pada titik asal
+            \fill (O) circle (2pt) node[below left] {$O$};
+            \draw[->, thick, blue] (O) -- (2, 2) node[midway, below right] {$\mathbf{v}$};
+            % Vektor negatif v
+            \draw[->, thick, blue] (O) -- (-2, -2) node[midway, above left] {$-\mathbf{v}$};
+        \end{tikzpicture}
+        \begin{tikzpicture}[scale=1.5]
+            \coordinate (O) at (0,0);
+            \coordinate (V) at (2,2);
+            \coordinate (W) at (-1,2);
+            
+            \draw[->,thick, blue] (O) -- (V) node[midway, below right] {$\mathbf{v}$};
+            \draw[->,thick, red] (O) -- (W) node[midway, above left] {$\mathbf{w}$};
+            \draw[->,thick, green] (W) -- (V) node[midway, above right] {$\mathbf{w} - \mathbf{v}$};
+        \end{tikzpicture}
+    \caption{Pengurangan Vektor}
+    \label{fig:Pengurangan Vektor}
+\end{figure}
+
+
+\subsection{\textit{Norm, Dot Product} dan Jarak pada $\mathbb{R}^n$}
+Panjang suatu vektor $\mathbf{v}$, yang juga dikenal sebagai norma, magnitudo, atau besar vektor, dilambangkan dengan $\| \mathbf{v} \|$.
+\\
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        % sumbu x
+        \draw[->] (-1,0) -- (4,0) node[right] {$x$};
+        % sumbu y
+        \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+        % vektor v
+        \draw[->,thick] (0,0) -- (3,2) node[right] {($v_1,v_2$)};
+        \draw[->] (0,0) -- (3,2) node[midway,above] {$\| \mathbf{v} \|$};
+        \draw[dashed] (3,0) -- (3,2);
+    \end{tikzpicture}
+    \caption{\textit{Norm} Vektor}
+    \label{fig:enter-label}
+\end{figure}
+
+Untuk ruang berdimensi dua ($\mathbb{R}^2$), norma vektor dapat dihitung menggunakan Teorema Pythagoras sebagai berikut:
+
+\[
+    \| \mathbf{v} \| = \sqrt{v_1^2 +v_2^2}
+\]
+
+Pada ruang tiga dimensi ($\mathbb{R}^3$), besar vektor $\| \mathbf{v} \| = (v_1,v_2,v_3)$ dihitung dengan rumus:
+
+\[
+    \| \mathbf{v} \| = \sqrt{v_1^2 +v_2^2+v_3^2}
+\]
+
+Secara umum, untuk vektor dalam ruang berdimensi $n$ ($\mathbb{R}^n$), normanya ditentukan melalui:
+
+\[
+    \| \mathbf{v} \| = \sqrt{v_1^2 +v_2^2+\ldots+v_n^n}
+\]
+
+Sebuah vektor dikatakan sebagai vektor satuan apabila memiliki norm yang bernilai satu. Vektor jenis ini digunakan untuk menunjukkan arah suatu vektor tanpa memperhatikan panjangnya. Misalnya, jika $\mathbf{v}$ adalah vektor pada $\mathbb{R}^2$ atau $\mathbb{R}^3$ dengan panjang 2, maka $ \frac{1}{2} \mathbf{v}$ merupakan vektor satuan yang searah dengan $\mathbf{v}$. Secara umum, vektor satuan $\mathbf{u}$ yang searah dengan $\mathbf{v}$ diperoleh melalui proses normalisasi, yaitu:
+
+\[
+\mathbf{u} = \frac{1}{\| \mathbf{v} \|} \mathbf{v}
+\]
+
+\begin{figure}[h!]
+    \centering
+        \begin{tikzpicture}[scale=1]
+        % sumbu x
+        \draw[->] (-1,0) -- (4,0) node[right] {$x$};
+        % sumbu y
+        \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+        % vektor v
+        \draw[->,thick] (0,0) -- (3,2) node[right] {$P_2$};
+        \draw[->] (0,0) -- (3,2) node[midway,above] {$d$};
+        \draw[dashed] (3,0) -- (3,2);
+        % node P_1
+        \node[below left] at (0,0) {$P_1$};
+    \end{tikzpicture}
+    \caption{Panjang Vektor $\vec{P_1P_2}$ adalah $d$}
+    \label{fig:enter-label}
+\end{figure}
+
+Jika terdapat dua titik $P_1(x_1, y_1)$ dan $P_2(x_2, y_2)$ dalam $\mathbb{R}^2$, maka panjang dari vektor $\vec{P_1P_2}$ (yakni jarak antara kedua titik tersebut) dapat dihitung menggunakan rumus:
+\[
+d = \| \vec{P_1P_2} \| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]
+
+Secara lebih umum, jika $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ dan $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ adalah dua titik dalam $\mathbb{R}^n$, maka jarak antara keduanya dinyatakan sebagai:
+\[
+d(\mathbf{u}, \mathbf{v}) = \| \mathbf{u} - \mathbf{v} \| = \sqrt{(u_1 - v_1)^2 + (u_2 - v_2)^2 + \cdots + (u_n - v_n)^2}
+\]
+
+\section*{Perkalian Titik \textit{(Dot Product})}
+
+Operasi penting lainnya dalam analisis vektor adalah perkalian titik atau \textit{dot product}. Untuk dua vektor $\mathbf{u}$ dan $\mathbf{v}$ di $\mathbb{R}^2$, \textit{dot product} didefinisikan sebagai:
+\begin{equation}
+   \mathbf{u} \cdot \mathbf{v} = u_1v_1 + u_2v_2 
+   \label{eq:dotprodudct}
+\end{equation}
+\\
+Jika $\mathbf{u}$ dan $\mathbf{v}$ adalah vektor dalam $\mathbb{R}^n$, maka \textit{dot product}nya adalah:
+\[
+\mathbf{u} \cdot \mathbf{v} = u_1v_1 + u_2v_2 + \cdots + u_nv_n = \sum_{i=1}^{n} u_iv_i
+\]
+\\
+\textit{Dot product} juga memiliki representasi geometris yang berkaitan dengan sudut $\theta$ antara dua vektor. Jika kedua vektor $\mathbf{u}$ dan $\mathbf{v}$ diposisikan sehingga titik awalnya sama, maka berdasarkan hukum cosinus diperoleh:
+
+
+\begin{figure}[h!]
+    \centering
+            \begin{tikzpicture}[scale=1.5]
+        % Koordinat
+        \coordinate (u1) at (0,0);
+        \coordinate (u2) at (2,2);
+        \coordinate (v1) at (4,0);
+        \coordinate (v2) at (0,0); % We need to specify the y-coordinate of v2 here
+        % Vektor u
+        \draw[->, thick] (u1) -- node[midway,above]  {\(\mathbf{u}\)} (u2);
+        % Vektor v
+        \draw[->, thick] (v2) -- node[midway,above]  {\(\mathbf{v}\)} (v1);
+        % Vektor v - u
+        \draw[->, thick] (u2) -- node[pos=0.5,right] {\(\mathbf{v} - \mathbf{u}\)} (v1);
+        % Sudut
+        \pic [draw, ->, angle radius=1cm, "$\theta$", angle eccentricity=0.5] {angle = v1--v2--u2};
+    \end{tikzpicture}
+    \caption{Ilustrasi Vektor $\mathbf{u}$, $\mathbf{v}$, dan $\mathbf{v} - \mathbf{u}$.}
+    \label{fig:Vektor Aturan Segitiga}
+\end{figure}
+
+\[
+\| \mathbf{v} - \mathbf{u} \|^2 = \| \mathbf{u} \|^2 + \| \mathbf{v} \|^2 - 2 \| \mathbf{u} \| \| \mathbf{v} \| \cos \theta
+\]
+
+
+Jika rumus tersebut dikembangkan dan disubstitusi dengan komponen-komponen vektor:
+\[
+(u_1 - v_1)^2 + (u_2 - v_2)^2 = u_1^2 + u_2^2 + v_1^2 + v_2^2 - 2 \| \mathbf{u} \| \| \mathbf{v} \| \cos \theta
+\]
+\[
+    -2(u_1 v_1 + u_2 v_2 ) = - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos{\theta}
+\]
+\begin{equation}
+    (u_1 v_1 + u_2 v_2 ) = \|\mathbf{u}\| \|\mathbf{v}\| \cos{\theta}
+    \label{eq:dotprodudct2}
+\end{equation}
+
+Dengan menggunakan definisi persamaan \ref{eq:dotprodudct} maka persamaan \ref{eq:dotprodudct2} menjadi:
+\begin{equation}
+\mathbf{u} \cdot \mathbf{v} = \| \mathbf{u} \| \| \mathbf{v} \| \cos \theta
+\end{equation}
+
+Dengan demikian, hubungan antara \textit{dot product} dan sudut antara dua vektor dinyatakan sebagai:
+\begin{equation}
+\cos \theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\| \mathbf{u} \| \| \mathbf{v} \|}
+\end{equation}
+
+
+\section{Metrik Jarak}
+\label{sec:Representasi}
+Secara matematis, konsep jarak dinyatakan melalui metrik jarak, yaitu suatu fungsi yang mengukur tingkat kedekatan atau kemiripan antar objek dalam ruang berdimensi banyak. Metrik jarak dinotasikan sebagai $d : \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}_{\geq 0}$ dan harus memenuhi aksioma dasar untuk memastikan perhitungan kedekatan antar data dapat dilakukan secara matematis dengan benar. Aksioma-aksioma tersebut, sebagaimana dijelaskan oleh \citep{book:925150}, meliputi:
+\begin{enumerate}
+    \item \textit{Non-negativity:} \( d(x, y) \geq 0 \)
+    \item \textit{Identity of Indiscernibles:} \( d(x, y) = 0 \iff x = y \)
+    \item \textit{Symmetry:} \( d(x, y) = d(y, x) \)
+    \item \textit{Triangle Inequality:} \( d(x, y) \leq d(x, z) + d(z, y) \)
+\end{enumerate}
+
+Dengan memenuhi keempat aksioma tersebut, suatu fungsi dapat dikatakan sebagai metrik jarak yang sah. Dalam konteks analisis dokumen teks, vektor-vektor yang merepresentasikan dokumen diperlakukan sebagai titik-titik dalam ruang berdimensi tinggi, sehingga metrik jarak dapat diterapkan untuk mengukur kedekatan semantik antar dokumen. Pemilihan jenis jarak yang digunakan dalam suatu analisis perlu disesuaikan dengan karakteristik data dan tujuan dari pengukuran, karena penggunaan metrik yang tidak sesuai dapat memengaruhi ketepatan hasil analisis. Pada penelitian ini, peneliti akan menggunakan empat jenis metrik jarak dalam perhitungan matriks jarak pada dokumen teks, yaitu jarak Euclidean, Manhattan, Jaccard, dan Cosine. Metrik-metrik ini digunakan untuk mengukur tingkat kedekatan antar dokumen yang telah direpresentasikan dalam bentuk vektor numerik.
+
+\subsection{Jarak Euclidean}
+\label{subsec:euclidean}
+Jarak Euclidean merupakan ukuran jarak paling umum yang digunakan dalam ruang berdimensi-n dan dikenal juga sebagai \textit{L2-norm}, merupakan salah satu ukutan jarak dalam ruang $\mathbb{R}^n$ yang digunakan untuk mengukur jarak lurus  (garis terpendek) antara dua titik. Jarak ini didasarkan pada teorema Pythagoras, di mana perbedaan nilai setiap koordinat dikuadratkan terlebih dahulu, kemudian dijumlahkan, dan hasilnya diambil akar kuadrat. Jarak ini merepresentasikan "jarak sebenarnya" antara dua titik dalam ruang berdimensi-n, sebagaimana ditunjukkan pada Gambar ~\ref{fig:euclidean}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    % Draw axes
+    \draw[->, thick] (0,0) -- (4.5,0) node[right] {$x$};
+    \draw[->, thick] (0,0) -- (0,4.5) node[above] {$y$};
+
+    % Coordinates for points
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (3.5,3.5);
+
+    % Draw dashed Euclidean line
+    \draw[dashed, thick] (A) -- (B);
+
+    % Draw points and labels
+    \filldraw[black] (A) circle (2pt) node[below left] {$(x_1, y_1)$};
+    \filldraw[black] (B) circle (2pt) node[above right] {$(x_2, y_2)$};
+\end{tikzpicture}
+\caption{Ilustrasi Jarak Euclidean}
+\label{fig:euclidean}
+\end{figure}
+
+Jarak Euclidean antara dua vektor $x, y \in \mathbb{R}^n$, didefinisikan sebagai berikut:
+
+\begin{equation}
+    d(X, Y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+    \label{eq:euclidean}
+\end{equation}
+
+dengan $x_i, y_i \in \mathbb{R}$, di mana $x_i$ menyatakan nilai fitur ke-$i$ dari data uji dan $y_i$ menyatakan nilai fitur ke-$i$ dari data latih.
+
+\subsection{Jarak Manhattan}
+\label{subsec:manhattan}
+Jarak Manhattan, yang dikenal juga sebagai \textit{City-block distance}, \textit{Taxicab distance}, atau \textit{L1-norm}, merupakan salah satu jarak dalam ruang $\mathbb{R}^n$ yang digunakan untuk mengukur jarak antara dua titik berdasarkan perbedaan nilai setiap koordinatnya. Jarak Manhattan diasumsikan bahwa perpindahan antara dua titik hanya dapat dilakukan sepanjang sumbu koordinat dalam struktur berbasis grid, sebagaimana ditunjukkan pada Gambar~\ref{fig:manhattan}.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.8]
+    % Draw grid
+    \foreach \x in {0,1,2,3,4,5}
+        \draw[gray, thick] (\x,0) -- (\x,5);
+    \foreach \y in {0,1,2,3,4,5}
+        \draw[gray, thick] (0,\y) -- (5,\y);
+
+    % Coordinates for X and Y
+    \coordinate (X) at (1,1);
+    \coordinate (Y) at (4,4);
+
+    % Draw L1 paths
+    \draw[blue, very thick] (X) -- (1,4) -- (Y); % Path 1
+    \draw[red, very thick] (X) -- (4,1) -- (Y);   % Path 2
+    \draw[yellow, very thick] (X) -- ++(0,1) -- ++(1,0) -- ++(0,1) -- ++(1,0) -- ++(0,1) -- ++(1,0); % Stepwise path
+
+    % Draw points and labels
+    \filldraw[black] (X) circle (2pt) node[below left] {X};
+    \filldraw[black] (Y) circle (2pt) node[above right] {Y};
+\end{tikzpicture}
+\caption{Ilustrasi Jarak Manhattan}
+\label{fig:manhattan}
+\end{figure}
+
+Jarak Manhattan antara dua vektor $x, y \in \mathbb{R}^n$, didefinisikan sebagai berikut:
+
+\begin{equation}
+d(x, y) = \sum_{i=1}^{n} |x_i - y_i|
+\label{eq:manhattan}
+\end{equation}
+
+dengan $x_i, y_i \in \mathbb{R}$, di mana $x_i$ menyatakan nilai fitur ke-$i$ dari data uji dan $y_i$ menyatakan nilai fitur ke-$i$ dari data latih.
+
+
+\subsection{Jarak Jaccard}
+\label{subsec:jaccard}
+Jarak Jaccard digunakan untuk mengukur tingkat ketidaksamaan (\textit{dissimilarity}) antara dua himpunan. Dalam konteks klasifikasi teks, jarak ini sering digunakan untuk membandingkan dua dokumen dengan menghitung kesamaan kata-kata yang terdapat di dalamnya. 
+
+Secara matematis, \textit{Jaccard Similarity} antara dua himpunan $X$ dan $Y$ didefinisikan sebagai 
+
+\begin{equation}
+    Jaccard(X, Y) = \frac{|X \cap Y|}{|X \cup Y|}
+    \label{eq:jaccardsim}
+\end{equation}
+
+dengan $X$ dan $Y$ merupakan himpunan kata dari dua dokumen, $|X \cap Y|$ menyatakan jumlah kata yang muncul di kedua dokumen, dan $|X \cup Y|$ menyatakan jumlah total kata unik dalam kedua dokumen.
+
+Jarak ini menghasilkan nilai dalam rentang 0 hingga 1, di mana nilai 1 menunjukkan kesamaan sempurna antara dua dokumen, sedangkan nilai 0 menunjukkan bahwa kedua dokumen tidak memiliki kesamaan kata sama sekali. Konsep \textit{Jaccard Similarity} dapat dilihat pada Gambar \ref{fig:jaccard}, di mana area yang diarsir menunjukkan bagian irisan, sedangkan seluruh area dalam lingkaran merepresentasikan gabungan.
+
+\begin{figure}[h]
+\centering
+% First diagram: Intersection
+\begin{tikzpicture}
+  \begin{scope}
+    \draw[thick] (0,0) circle(1.5);
+    \draw[thick] (2.5,0) circle(1.5);
+
+    % X only (left side)
+    \begin{scope}
+      \clip (0,0) circle(1.5);
+      \fill[gray!70] (-1.5,-1.5) rectangle (1.25,1.5);
+    \end{scope}
+
+    % Y only (right side)
+    \begin{scope}
+      \clip (2.5,0) circle(1.5);
+      \fill[blue!60] (1.25,-1.5) rectangle (4,1.5);
+    \end{scope}
+
+    % Intersection
+    \begin{scope}
+      \clip (0,0) circle(1.5);
+      \clip (2.5,0) circle(1.5);
+      \fill[blue!90] (0,-1.5) rectangle (2.5,1.5);
+    \end{scope}
+
+    % Labels
+    \node at (-0.9,0) {$X$};
+    \node at (3.4,0) {$Y$};
+    \node at (1.25,0) {$X \cap Y$};
+  \end{scope}
+
+  % Divider line
+  \draw[thick] (-1.5,-2) -- (4,-2);
+
+  % Second diagram: Union
+  \begin{scope}[yshift=-5cm]
+    \draw[thick] (0,0) circle(1.5);
+    \draw[thick] (2.5,0) circle(1.5);
+
+    % Entire union
+    \begin{scope}
+      \clip (0,0) circle(1.5);
+      \fill[blue!60] (-1.5,-1.5) rectangle (4,1.5);
+    \end{scope}
+    \begin{scope}
+      \clip (2.5,0) circle(1.5);
+      \fill[blue!60] (-1.5,-1.5) rectangle (4,1.5);
+    \end{scope}
+
+    % Labels
+    \node at (-0.9,0) {$X$};
+    \node at (3.4,0) {$Y$};
+    \node at (1.25,0) {$X \cup Y$};
+  \end{scope}
+\end{tikzpicture}
+\caption{Ilustrasi Jaccard Similarity}
+\label{fig:jaccard}
+\end{figure}
+
+Gambar \ref{fig:jaccard} menunjukkan bahwa semakin besar irisan antara dua himpunan dibandingkan dengan gabungannya, semakin tinggi pula nilai \textit{Jaccard Similarity}. Selanjutnya, Jarak Jaccard merupakan komplemen dari \textit{Jaccard similarity}, yang didefinisikan sebagai:
+
+\begin{equation}
+    d_{\text{Jaccard}}(X, Y) = 1 - Jaccard(X, Y)
+   \label{eq:jarakjaccard}
+\end{equation}
+\\
+Pada penelitian ini, jarak Jaccard digunakan untuk menghitung kedekatan antar dokumen teks berdasarkan kesamaan kata yang terkandung dalam dokumen tersebut. Nilai jarak Jaccard berada dalam rentang $[0,1]$, dimana nilai 0 menunjukkan bahwa kedua himpunan sangat identik, sedangkan nilai 1 menunjukkan bahwa kedua himpunan sangat berbeda.
+
+
+
+\subsection{\textit{Cosine Similarity dan Cosine Distance}}
+\label{subsec:Cosine}
+
+\textit{Cosine similarity} merupakan ukuran kemiripan antara dua vektor dalam ruang berdimensi tinggi yang sering digunakan dalam pengolahan bahasa alami (\textit{Natural Language Processing}), terutama dalam klasifikasi atau pengelompokan dokumen teks. Metrik ini menghitung nilai cosinus dari sudut antara dua vektor yang mewakili fitur suatu dokumen. Secara matematis, \textit{Cosine Similarity} antara dua vektor $v$ dan $w$ didefinisikan sebagai:
+
+\begin{equation}
+    \text{Cosine}(v, w) = \frac{v \cdot w}{\|v\| \|w\|}
+    \label{eq:cosine}
+\end{equation}
+\\
+dengan $v \cdot w$ merupakan hasil perkalian \textit{dot-product} antara dua vektor, dan $\|v\|$, $\|w\|$ masing-masing merupakan norma Euclidean dari vektor $v$ dan $w$. \textit{Cosine similarity} bernilai antara $0$ hingga $1$ jika digunakan pada data frekuensi non-negatif, di mana nilai 1 menunjukkan bahwa kedua vektor memiliki arah yang sama (sangat mirip), dan nilai 0 menunjukkan bahwa kedua vektor saling tegak lurus (tidak mirip sama sekali). Ilustrasi \textit{Cosine Similarity} dapat dilihat pada Gambar \ref{fig:cosine}, yang menunjukkan sudut antara dua vektor dalam bidang dua dimensi.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=2]
+  % Koordinat vektor
+  \coordinate (O) at (0,0);
+  \coordinate (v) at (2,1);    % vektor v
+  \coordinate (w) at (1,2);    % vektor w
+
+  % Sumbu koordinat
+  \draw[->, thick] (0,0) -- (2.4,0) node[right] {$x$};
+  \draw[->, thick] (0,0) -- (0,2.4) node[above] {$y$};
+
+  % Vektor
+  \draw[->, thick, blue] (O) -- (v) node[below right] {$\vec{v}$};
+  \draw[->, thick, red] (O) -- (w) node[above right] {$\vec{w}$};
+
+  % Sudut theta dengan arc mendekati 36.87 derajat
+  \draw[thick] (0.45,0) arc[start angle=0, end angle=63.4, radius=0.45];
+  \node at (0.5,0.25) {\Large $\theta$};
+\end{tikzpicture}
+\caption{Ilustrasi \textit{Cosine Similarity} sebagai sudut antara dua vektor}
+\label{fig:cosine}
+\end{figure}
+
+
+Gambar \ref{fig:cosine} menunjukkan bahwa semakin kecil sudut $\theta$ antara vektor $v$ dan $w$, semakin besar nilai \textit{cosine similarity} yang dihasilkan. Selanjutnya, \textit{Cosine Distance} merupakan ukuran ketidaksamaan (\textit{dissimilarity}) berdasarkan \textit{cosine similarity}, yang didefinisikan sebagai:
+
+\begin{equation}
+    d_{\text{Cosine}}(v, w) = 1 - \text{Cosine}(v, w)
+    \label{eq:jarakcosine}
+\end{equation}
+\\
+Pada penelitian ini, cosine \textit{distance} digunakan untuk mengukur perbedaan orientasi (arah) antar dokumen teks yang telah direpresentasikan dalam bentuk vektor berbasis kata (misalnya dengan TF-IDF). Nilai jarak cosine berada dalam rentang $[0,1]$, di mana nilai 0 menunjukkan kemiripan sempurna dan nilai 1 menunjukkan bahwa kedua vektor tidak memiliki kesamaan arah sama sekali.
+
+\section{Matriks Jarak}
+Dalam konteks analisis dokumen teks, setelah setiap dokumen direpresentasikan sebagai vektor numerik, matriks jarak digunakan untuk menyimpan ukuran kedekatan atau ketidaksamaan antara setiap pasangan dokumen dalam suatu korpus. Matriks jarak adalah sebuah matriks persegi berukuran $n \times n$, di mana $n$ adalah jumlah total dokumen yang dianalisis. Setiap entri ($i,j$) dalam matriks menyimpan nilai jarak $D_{ij}=d(dok_i,dok_j)$ antara dokumen ke-$i$ dan dokumen ke-$j$, yang dihitung menggunakan metrik jarak tertentu. Elemen diagonal matriks $(D_{ii})$ selalu bernilai nol karena jarak setiap dokumen dengan dirinya sendiri adalah nol. Struktur matriks jarak dapat direpresentasikan sebagai berikut:
+\[
+D = 
+\begin{bmatrix}
+d(dok_1, dok_1) & d(dok_1, dok_2) & \cdots & d(dok_1, dok_n) \\
+d(dok_2, dok_1) & d(dok_2, dok_2) & \cdots & d(dok_2, dok_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+d(dok_n, dok_1) & d(dok_n, dok_2) & \cdots & d(dok_n, dok_n)
+\end{bmatrix}
+\]
+
+Matriks ini bersifat simetris jika metrik jarak yang digunakan memenuhi sifat simetri, yaitu $d(dok_i,dok_j)=d(dok_j,dok_i)$. Dengan demikian, matriks jarak menyediakan representasi menyeluruh mengenai hubungan kedekatan antar seluruh pasangan dokumen dalam korpus, dan menjadi dasar penting dalam berbagai metode analisis lanjutan, seperti klasifikasi, klasterisasi, dan visual multidimensi.
+
+\section{Studi Kasus}
+Pada bagian ini, akan disajikan sebuah studi kasus untuk mendemonstrasikan proses perhitungan matriks jarak pada dokumen teks. Studi kasus ini menggunakan 10 dokumen teks yang diambil secara acak dari dataset penelitian tugas akhir. Studi kasus ini bertujuan untuk mengilustrasikan bagaimana berbagai metrik jarak, seperti Euclidean, Manhattan, Jaccard, dan Cosine, diterapkan untuk mengukur tingkat kemiripan atau ketidakmiripan antar dokumen teks setelah melalui tahapan pra-pemrosesan dan representasi numerik.
+
+\subsection{Pra-pemrosesan Teks}
+Sebelum perhitungan matriks jarak dapat dilakukan, dokumen teks mentah harus melalui serangkaian tahapan prapemrosesan untuk menyusun data teks yang awalnya tidak terstruktur menjadi bentuk yang lebih teratur dan mudah dianalisis, serta menghilangkan elemen yang tidak relevan yang dapat mengganggu hasil analisis. Proses prapemrosesan dimulai dengan \textit{Case Folding (Lower Case)}. Tahapan ini mengubah seluruh huruf dalam teks menjadi huruf kecil untuk menyamakan bentuk kata yang berbeda karena Kapitalisasi, misalnya "\textit{Love}" dan "\textit{love}" akan dianggap sama. Contoh hasil \textit{Lower Case} pada dokumen teks dapat dilihat pada Tabel ~\ref{tab:lowercase} 
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses \textit{Lower Case}}
+\label{tab:lowercase}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Data Asli} & \textbf{Setelah Proses \textit{Lower Case}} \\
+\hline
+2 billion....Coming soonï»¿ & 2 billion....coming soonï»¿ \\
+\hline
+Hey everyone. Watch this trailer!!!!!!!! \url{http://believemefilm.com?hlr=h2hQBUVB} ï»¿
+& 
+hey everyone. watch this trailer!!!!!!!! \url{http://believemefilm.com?hlr=h2hqbuvb} ï»¿
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+Setelah mengubah huruf menjadi huruf kecil semua, dilakukan \textit{cleaning data}. Tahapan ini bertujuan untuk membersihkan karakter khusus yang tidak relevan  yang dapat mengganggu proses tokenisasi dan analisis. Untuk mengilustrasikan proses \textit{cleaning data}, dapat dilihat pada Tabel ~\ref{tab:cleaningdata}
+
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses \textit{Cleaning Data}}
+\label{tab:cleaningdata}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Setelah Proses \textit{Lower Case}} & \textbf{Setelah Proses \textit{Cleaning Data}} \\
+\hline
+2 billion....coming soonï»¿
+ & 
+numeric billion coming soon
+\\
+\hline
+hey everyone. watch this trailer!!!!!!!! \url{http://believemefilm.com?hlr=h2hqbuvb} ï»¿
+& 
+hey everyone watch this trailer url
+ \\
+\hline
+\end{tabularx}
+\end{table}
+
+Tahapan selanjutnya adalah tokenisasi, yang merupakan tahapan krusial dalam pemrosesan bahasa alami. Token didefinisikan sebagai unit-unit teks bermakna. Proses ini memecah teks yang telah dibersihkan menjadi unit-unit kata (token) sehingga lebih mudah dianalisis dan diproses pada tahap berikutnya. Contoh hasil dari proses tokenisasi teks disajikan melalui Tabel ~\ref{tab:tokenisasi}
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses Tokenisasi}
+\label{tab:tokenisasi}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Setelah Proses \textit{Cleaning Data}} & \textbf{Setelah Proses Tokenisasi} \\
+\hline
+numeric billion coming soon
+& 
+[`numeric', `billion', `coming', `soon']
+ \\
+\hline
+hey everyone watch this trailer url & 
+['hey', 'everyone', 'watch', 'this', 'trailer', 'url'] \\
+\hline
+\end{tabularx}
+\end{table}
+
+Tahapan selanjutnya yaitu normalisasi kata, yaitu proses mengubah kata-kata tidak baku menjadi kata baku. Pada penelitian ini, kamus normalisasi disusun mandiri oleh peneliti berdasarkan observasi terhadap data yang digunakan. Contoh hasil dari proses normalisasi kata disajikan melalui Tabel \ref{tab:normalisasi}
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses Normalisasi}
+\label{tab:normalisasi}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Setelah Proses Tokenisasi} & \textbf{Setelah Proses Normalisasi} \\
+\hline
+[`numeric', `billion', `coming', `soon'] & ['numeric', 'billion', 'coming', 'soon']
+ \\
+\hline
+['hey', 'everyone', 'watch', 'this', 'trailer', 'url'] & ['hello', 'everyone', 'watch', 'this', 'trailer', 'url'] \\
+\hline
+\end{tabularx}
+\end{table}
+
+Kemudian, tahapan \textit{Stopwords Removal} dilakukan untuk menghapus kata-kata umum dalam bahasa yang kurang memiliki nilai pembeda dalam klasifiksai teks (misalnya, "\textit{the}", "\textit{at}", "\textit{is}"). Contoh hasil dari proses \textit{stopwords removal} disajikan melalui Tabel ~\ref{tab:StopWord}
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses \textit{Stopwords Removal}}
+\label{tab:StopWord}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Setelah Proses Tokenisasi} & \textbf{Setelah Proses \textit{Stopwords Removal}} \\
+\hline
+[`numeric', `billion', `coming', `soon'] & 
+[`numeric', `billion', `coming', `soon'] \\
+\hline
+['hello', 'everyone', 'watch', 'this', 'trailer', 'url'] &
+['hello', 'everyone', 'watch', 'trailer', 'url']
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+Tahapan terakhir dalam prapemrosesan adalah \textit{stemming}, yang merupakan proses penggabungan kata-kata yang memiliki akar kata yang sama. Misalnya bentuk tunggal, jamak, atau berbagai \textit{tense} dari suatu kata disatukan ("\textit{run}", "\textit{running}", "\textit{runs}", dan "\textit{ran}" seluruhnya berasal dari akar kata "\textit{run}"). Proses ini penting karenna tidak mengubah makna semantisnya dalam konteks \textit{text mining} dan membantu mengurangi dimensi data. Contoh hasil dari proses \textit{stemming} disajikan melalui Tabel ~\ref{tab:stemming}
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Setelah Proses \textit{Stemming}}
+\label{tab:stemming}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Setelah Proses \textit{Stopwords Removal}} & \textbf{Setelah Proses \textit{Stemming}} \\
+\hline
+[`numeric', `billion', `coming', `soon'] & ['numer', 'billion', 'come', 'soon'] \\
+\hline
+['hello', 'everyone', 'watch', 'trailer', 'url'] & ['hello', 'everyon', 'watch', 'trailer', 'url']
+\\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Representasi Dokumen Teks}
+Setelah proses prapemrosesan, dokumen teks perlu direpresentasikan ke dalam bentuk numerik agar dapat diolah secara matematis. Dua pendekatan yang relevan dalam studi kasus ini adalah \textit{Bag of Words}(BoW) biner dan \textit{Term Frequency-Inverse Document Frequency}(TF-IDF).
+
+\subsubsection{\textit{Bag of Words}(BoW)}
+Pendekatan \textit{Bag of Words}(BoW) merepresentasikan sebuah dokumen sebagai kumpulan kata-kata, tanpa memperhatikan tata urutan kata dan struktur gramatikal. Informasi yang dipertahankan hanyalah frekuensi kemunculan kata dalam dokumen. Untuk keperluan perhitungan jarak Jaccard, dokumen akan direpresentasikan dalam bentuk BoW biner, di mana nilai 1 diberikan jika sebuah kata muncul dalam dokumen, dan 0 jika tidak muncul.
+
+Berikut adalah representasi \textit{Bag of Words} (BoW) biner dari 10 dokumen yang telah melewati tahapan \textit{cleaning}
+
+\begin{table}[h]
+\centering
+\caption{Bag of Words Features Matrix}
+\label{tab:bow_features}
+\adjustbox{width=\textwidth,center}
+{%
+\begin{tabular}{c|*{20}{c}}
+\toprule
+\textbf{Doc ID} & \textbf{awesom} & \textbf{billion} & \textbf{come} & \textbf{danc} & \textbf{everyon} & \textbf{funni} & \textbf{good} & \textbf{happy\_emoji} & \textbf{hello} & \textbf{just} & \textbf{lada} & \textbf{laugh} & \textbf{numer} & \textbf{sexi} & \textbf{so} & \textbf{soon} & \textbf{trailer} & \textbf{url} & \textbf{view} & \textbf{watch} \\
+\midrule
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+7 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+10 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\subsubsection{\textit{Term Frequency-Inverse Document Frequency} (TF-IDF)}
+TF-IDF merupakan salah satu metode representasi teks yang banyak digunakan dalam \textit{text mining} untuk mengukur tingkat kepentingan suatu kata terhadap sebuah dokumen dalam suatu kumpulan dokumen (korpus). Bobot suatu kata dalam dokumen dihitung dari dua komponen utama, yaitu \textit{Term Frequency} (TF) dan \textit{Inverse Document Frequency} (IDF). TF mengukur seberapa sering suatu kata muncul dalam sebuah dokumen, dan IDF mengukur seberapa jarang kata muncul di seluruh dokumen. Kombinasi kedua dokumen ini menghasilkan bobot numerik yang mencerminkan pentingnya suatu kata dalam mendeskripsikan isi dokumen. Pada penelitian ini, pembobotan TF-IDF diimplementasikan menggunakan kelas \texttt{TfidfVectorizer} dari pustaka \textit{scikit-learn} di Python, yang secara efisien mentransformasikan data teks yang telah melalui tahap preprocessing menjadi vektor numerik. Sebagai contoh perhitungan untuk memperoleh bobot fitur pada setiap dokumen, dikunakan data dokumen dengan ID asli 1,2, dan 8 dari data yang telah melalui proses prapemrosesan. Daftar kata (komentar) dari dokumen-dokumen terpilih disajikan pada Tabel \ref{tab:tf-idf}
+
+\begin{table}[h]
+\centering
+\caption{Contoh Kata untuk Perhitungan TF-IDF}
+\label{tab:tf-idf}
+\adjustbox{width=\textwidth,center}
+{%
+\begin{tabular}{c|*{19}{c}}
+\hline
+\textbf{Doc ID} & \textbf{Komentar Setelah Prapemrosesan}  \\
+\hline
+1 & [`numer', `billion', `come', `soon'] \\
+\hline
+2 & ['so', 'funni', 'awesom', 'laugh', 'sexi', 'lada', 'happy\_emoji'] \\
+\hline
+3 & ['hello', 'everyon', 'watch', 'trailer', 'url'] \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+Langkah pertama yaitu membangun \textit{term} dari seluruh kata unik yang ada dalam seluruh korpus. \textit{Term} yang terbentuk berisi duapuluh kata, yaitu:\textit{ numer, billion, come, soon, so, funni, awesom, laugh, sexi, lada, $happy\_emoji$, url, view, good, hello, everyon, watch, trailer, just, danc}. Tahapan selanjutnya adalah perhitungan \textit{Term Frequency} (TF) menggunakan pendekatan hitung mentah (\textit{raw count}), yaitu dengan menghitung seberapa sering suatu kata ke-$i$ muncul dalam dokumen ke-$i$.  Misalnya kata \textit{billion} muncul satu kali pada beberapa dokumen, sedangkan kata \textit{awesom} hanya muncul pada dokumen 2. Hasil lengkap dari perhitungan frekuensi kemunculan kata ini disajikan dalam Tabel ~\ref{tab:tf_table}, yang menunjukkan frekuensi kemunculan setiap kata per dokumen.
+
+\begin{table}[h]
+\centering
+\caption{\textit{Term Frequency} (TF) Tiap Dokumen}
+\label{tab:tf_table}
+\adjustbox{width=\textwidth,center}
+{%
+\begin{tabular}{c|*{20}{c}}
+\toprule
+\textbf{Doc ID} & \textbf{awesom} & \textbf{billion} & \textbf{come} & \textbf{danc} & \textbf{everyon} & \textbf{funni} & \textbf{good} & \textbf{happy\_emoji} & \textbf{hello} & \textbf{just} & \textbf{lada} & \textbf{laugh} & \textbf{numer} & \textbf{sexi} & \textbf{so} & \textbf{soon} & \textbf{trailer} & \textbf{url} & \textbf{view} & \textbf{watch} \\
+\midrule
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+7 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+10 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 3 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Langkah selanjutnya adalah menghitung nilai \textit{Inverse Document Frequency} (IDF) untuk setiap kata dalam keseluruhan dokumen. Nilai ini dihitung berdasarkan banyaknya dokumen yang mengandung kata tertentu, dan bertujuan untuk mengurangi bobot kata-kata yang terlalu umum. Dalam implementasi \textit{scikit-learn}, IDF dihitung berdasarkan rumus sebagai berikut:
+\[
+idf(t)= \log\left(\frac{1+n_d}{1+df(t)}\right) +1
+\]
+dimana $n_d$ adalah jumlah total dokumen, dan $df(t)$ adalah jumlah dokumen yang memuat kata ke-$t$. Penambahan angka 1 pada pembilang dan penyebut dilakukan untuk mencegah pembagian nol dan mengurangi dominasi kata yang sangat umum. Sebagai contoh, perhitungan IDF untuk kata \texttt{url} adalah: \\
+        \[
+        n_d = 10, \quad \text{df}_{\texttt{url}} = 4
+        \]
+        \[
+        idf_{\texttt{url
+        }} = \log \left( \frac{1+10}{1+4} \right) +1 = \log(2.2) +1 \approx 1{,}788
+        \]
+        
+Semakin banyak sebuah kata muncul dalam berbagai dokumen, maka nilai IDF-nya akan semakin kecil. Hal ini mencerminkan bahwa kata tersebut bersifat lebih umum dalam korpus, sehingga kontribusinya dalam membedakan isi antar dokumen menjadi lebih rendah. Sebagai contoh, kata \texttt{number} juga muncul pada empat dokumen (dokumen 1, 5, 6, dan 10), sehingga memiliki IDF yang sama dengan kata \texttt{url}, yaitu sekitar 1{,}788. Hasil IDF untuk kata lainnya dihitung dengan cara yang serupa, dan dirangkum dalam Tabel \ref{tab:idf}.
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Hasil Perhitungan \textit{Inverse Document Frequency} (IDF)}
+\label{tab:idf}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Fitur} & \textbf{\textit{Inverse Document Frequency} (IDF)} \\ \hline
+awesom     & 2.704 \\ \hline
+billion  & 2.704 \\ \hline
+come       & 2.704 \\ \hline
+danc    & 2.704 \\ \hline
+everyon     & 2.704 \\ \hline
+funni    & 2.704 \\ \hline
+good  & 2.704 \\ \hline
+happy\_emoji  & 2.299 \\ \hline
+hello   & 2.704 \\ \hline
+just   & 2.704 \\ \hline
+lada     & 2.704 \\ \hline
+laugh      & 2.299 \\ \hline
+numer     & 1.788 \\ \hline
+sexi    & 2.704 \\ \hline
+so    & 2.704 \\ \hline
+soon    & 2.704 \\ \hline
+trailer    & 2.704 \\ \hline
+url      & 1.788 \\ \hline
+view     & 2.704 \\ \hline
+watch    & 2.704 \\ \hline
+\end{tabular}
+\end{table}
+
+Setelah memperoleh hasil dari TF dan IDF, langkah selanjutnya adalah menghitung bobot TF dan IDF menggunakan persamaan \ref{eq:TFIDF2}. Contoh perhitungan TF-IDF: \\
+Perhitungan TF-IDF untuk fitur \texttt(happy\_emoji):
+\[
+        tf(happy\_emoji, D10) = 3, \quad \text{idf}_{\texttt{happy\_emoji}} = 1.299
+        \]
+        \[
+        tf-idf(\texttt{happy\_emoji,D10})
+        = 3 \times 2{.}299 =  6{.}897
+        \]
+Seluruh hasil perhitungan TF-IDF disajikan pada Tabel \ref{tab:tfidf}.
+
+\begin{table}[h!]
+\centering
+\caption{Nilai Bobot Fitur per Dokumen Sebelum Normalisasi}
+\label{tab:tfidf}
+\adjustbox{width=\textwidth,center}{
+\begin{tabular}{c|*{20}{c}}
+\hline
+\textbf{Doc ID} & \textbf{awesom} & \textbf{billion} & \textbf{come} & \textbf{danc} & \textbf{everyon} & \textbf{funni} & \textbf{good} & \textbf{happy\_emoji} & \textbf{hello} & \textbf{just} & \textbf{lada} & \textbf{laugh} & \textbf{numer} & \textbf{sexi} & \textbf{so} & \textbf{soon} & \textbf{trailer} & \textbf{url} & \textbf{view} & \textbf{watch} \\
+\midrule
+1 & 0 & 2.704 & 2.704 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.788 & 0 & 0 & 2.704 & 0 & 0 & 0 & 0 \\
+2 & 2.704 & 0 & 0 & 0 & 0 & 2.704 & 0 & 2.299 & 0 & 0 & 2.704 & 2.299 & 0 & 2.704 & 2.704 & 0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.788 & 0 & 0 \\
+4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.788 & 0 & 0 \\
+5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.788 & 0 & 0 & 0 & 0 & 0 & 2.704 & 0 \\
+6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2.299 & 1.788 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+7 & 0 & 0 & 0 & 0 & 0 & 0 & 2.704 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 & 0 & 2.704 & 0 & 0 & 0 & 2.704 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2.704 & 1.788 & 0 & 2.704 \\
+9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1.788 & 0 & 0 \\
+10 & 0 & 0 & 0 & 2.704 & 0 & 0 & 0 & 6.897 & 0 & 2.704 & 0 & 0 & 1.788 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+ Setelah memperoleh nilai TF-IDF, tahapan selanjutnya adalah melakukan normalisasi menggunakan metode L2 \textit{normalization}, di mana setiap vektor dokumen disesuaikan agar memiliki panjang (magnitudo) sebesar 1, sehingga perbedaan panjang dokumen tidak mempengaruhi perhitungan jarak. Sebagai contoh, hasil TF-IDF Doc ID 1 sebelum normalisasi:
+ \[
+ w(D_1)=[2.704, 2.704, 1.788, 2.704]
+ \]
+ Panjang vektor dihitung sebagai:
+ \[
+ ||D_1||_2 = \sqrt{2.704^2+2.704^2+1.788^2+2.704^2} = \sqrt{7.311+ 7.311 + 3.196 + 7.311}
+ \]
+ \[
+ = \sqrt{25.131} \approx 5.013
+ \]
+Kemudian, setiap nilai TF-IDF dibagi dengan $5.013$ sehingga diperoleh vektor hasil normalisasi:
+\[
+w_{normalized}(D_1)= \left[
+\frac{2.704}{5.013},\,
+\frac{2.704}{5.013},\,
+\frac{1.788}{5.013},\frac{2.704}{5.013}
+\right]
+\]
+\[
+w_{normalized}(D_1) \approx \left[
+0.539,\, 0.539,\ 0.356,\ 0.539
+\right]
+\]
+
+Hasil TF-IDF normalisasi untuk dokumen lainnya dihitung dengan cara yang serupa, dan disajikan pada Tabel ~\ref{tab:tfidf_normalisasi}
+\begin{table}[h!]
+\centering
+\caption{Nilai Bobot Fitur per Dokumen Setelah Normalisasi}
+\label{tab:tfidf_normalisasi}
+\adjustbox{width=\textwidth,center}{
+\begin{tabular}{c|*{20}{c}}
+\hline
+\textbf{Doc ID} & \textbf{awesom} & \textbf{billion} & \textbf{come} & \textbf{danc} & \textbf{everyon} & \textbf{funni} & \textbf{good} & \textbf{happy\_emoji} & \textbf{hello} & \textbf{just} & \textbf{lada} & \textbf{laugh} & \textbf{numer} & \textbf{sexi} & \textbf{so} & \textbf{soon} & \textbf{trailer} & \textbf{url} & \textbf{view} & \textbf{watch} \\
+\midrule
+1 & 0 & 0.539 & 0.539 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.356 & 0 & 0 & 0.539 & 0 & 0 & 0 & 0 \\
+2 & 0.393 & 0 & 0 & 0 & 0 & 0.393 & 0 & 0.334 & 0 & 0 & 0.393 & 0.334 & 0 & 0.393 & 0.393 & 0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.551 & 0 & 0 & 0 & 0 & 0 & 0.834 & 0 \\
+6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.789 & 0.613 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+7 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 & 0 & 0.474 & 0 & 0 & 0 & 0.474 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.474 & 0.313 & 0 & 0.474 \\
+9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+10 & 0 & 0 & 0 & 0.334 & 0 & 0 & 0 & 0.852 & 0 & 0.334 & 0 & 0 & 0.221 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+}
+\end{table} 
+\\
+setelah melalui proses pembobotan TF-IDF dan normalisasi, setiap dokumen kini direpresentasikan sebagai vektor berdimensi teap yang mencerminkan pentingnya masing-masing kata relatif terhadap seluruh korpus. Representasi vektor ini tidak hanya menyerderhanakan struktur dokumen, tetapi juga memungkinkan penerapan berbagai teknik analisis numerik berbasis ruang vektor. Salah satu analisis lanjutan dari hasil representasi ini adalah pengukuran kesamaan atau perbedaan antar dokumen. Oleh karena itu, tahapan berikutnya dalam penelitian ini adalah menghitung matriks jarak antar dokumen berdasarkan representasi numerik tersebut.
+
+\subsection{Perhitungan Matriks Jarak}
+Dengan setiap dokumen yang telah diubah menjadi vektor fitur numerik melalui proses prapemrosesan dan representasi (TF-IDF dan BoW biner), tahpan selanjutnya adalah mengukur `jarak' antar dokumen tersebut. Matriks jarak adalah sebuah matriks persegi berukuran $n \times n$, di mana $n$ adalah jumlah total dokumen yang dianalisis. Setiap entri ($i, j$) dalam matrik ini disebut $D_{ij}$, berisikan nilai jarak antara dokumen ke-$i$ dan dokumen ke-$j$ ($d(dok_i,dok_j)$), yang dihitung menggunakan metrik jarak tertentu. Pada bagian ini, akan dijelaskan penerapan jarak Euclidean, Manhattan, Jaccard, dan Cosine.
+
+Sebagai iluistrasi perhitungan akan difokuskan pada Dokumen 1 dan Dokumen 6 dari dataset. Vektor TF-IDF untuk Dokumen 1 (D1) dan Dokumen 6 (D6) dari Tabel ~\ref{tab:tfidf} adalah sebagai berikut: 
+
+\begin{itemize}
+    \item D1$_{\text{TFIDF}}$ = [0.000, 0.539, 0.539, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.356, 0.000, 0.000, 0.539, 0.000, 0.000, 0.000, 0.000]
+    \item D6$_{\text{TFIDF}}$ = [0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.789, 0.0.613, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000]
+\end{itemize}
+
+Vektor \textit{Bag of Words} (BoW) biner untuk Dokumen 1 (BoW1) dan Dokumen 6 (BoW6) dari Tabel ~\ref{tab:bow_features} adalah:
+
+
+\begin{itemize}
+    \item BoW1 = [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+    \item BoW6 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+\end{itemize}
+
+\subsubsection{Jarak Euclidean}
+Pada pembahasan ini, digunakan dua komentar yang akan dihitung yaitu komentar pertama (Dokumen 1) dan komentar keenam (Dokumen 6). Jarak Euclidean merupakan ukuran jarak garis lurus antara dua titik dalam ruang Euclidean. Misalkan dua buah vektor dalam ruang berdimensi \(n\), masing-masing dinyatakan sebagai: $
+X = (x_1, x_2, \ldots, x_n) \quad \text{dan} \quad Y = (y_1, y_2, \ldots, y_n)$. Jarak Euclidean antara dua vektor tersebut fspst dihitung menggunakan persamaan (\ref{eq:euclidean}). Dalam konteks ini, vektor fitur dari komentar pertama (D1) dan komentar keenam (D6) terdiri dari 20 elemen, yang merupakan hasil ekstraksi fitur menggunakan metode TF-IDF. Oleh karena itu, rumus jarak Euclidean antara D1 dan D6 dituliskan sebagai:
+\[
+d_{\text{Euc}}(D_1, D_6) = \sqrt{\sum_{i=1}^{n} (d_{1,1} - d_{6,1})^2 + (d_{1,2} - d_{6,2})^2 + \ldots + (d_{1,20} - d_{6,20})^2}
+\]
+
+Langkah pertama adalah menghitung selisih kuadrat dari setiap pasangan elemen \(d_{1,i} - d_{6,i}\) yang bersesuaian antara kedua dokumen. Beberapa perhitungan yang diperoleh adalah sebagai berikut:
+
+\begin{itemize}
+    \item $(d_{1,2} - d_{6,2})^2 = (0.539 - 0.000)^2 = 0.290521$
+    \item $(d_{1,3} - d_{6,3})^2 = (0.539 - 0.000)^2 = 0.290521$
+    \item $(d_{1,12} - d_{6,12})^2 = (0.000 - 0.789)^2 = 0.622521$
+    \item $(d_{1,13} - d_{6,13})^2 = (0.356 - 0.613)^2 = 0.066049$
+    \item $(d_{1,16} - d_{6,16})^2 = (0.539 - 0.000)^2 = 0.290521$
+\end{itemize}
+Jumlah dari kelima komponen tersebut adalah:
+\begin{align*}
+\sum_{i=1}^{20}(d_{1,i} - d_{6,i})^2 &= 0.290521 + 0.290521 + 0.622521 + 0.066049 + 0.290521 \\
+&= 1.560133
+\end{align*}
+Dengan demikian, diperoleh jarak Euclidean antara Dokumen 1 dan Dokumen 6 sebagai berikut:
+\[
+d(D_1, D_6) = \sqrt{1.560133} \approx 1.24905284
+\]
+
+Hasil ini menunjukkan bahwa kedua dokumen memiliki tingkat kemiripan yang sedang, karena nilai jarak tidak terlalu besar namun juga tidak mendekati nol. Selanjutnya, berikut di sajikan matriks jarak Euclidean berukuran $10 \times 10$ yang menunjukkan jarak antara setiap pasangan dokumen dalam himpunan data yang dianalisis:
+\[
+\adjustbox{width=\textwidth,center}{$
+E_{10 \times 10} =
+\begin{bmatrix}
+0 & 1.414 & 1.414 & 1.414 &  1.267 & 1.249 & 1.414 & 1.414 & 1.414 & 1.357 \\
+1.414 & 0 & 1.414 & 1.414 & 1.414 & 1.213 & 1.414 & 1.414 & 1.414 & 1.195 \\
+1.414 & 1.414 & 0 & 0 & 1.414 & 1.414 & 1.414 &  1.171 & 0 & 1.414 \\
+1.414 & 1.414 & 0 & 0 & 1.414 & 1.414 & 1.414 & 1.171 & 0 & 1.414 \\
+1.267 & 1.414 & 1.414 & 1.414 & 0 & 1.150 & 1.414 & 1.414 & 1.414 & 1.325 \\
+1.249 & 1.213 & 1.414 & 1.414 & 1.150 & 0 & 1.414 & 1.414 & 1.414 & 1.314 \\
+1.414 & 1.414 & 1.414 & 1.414 & 1.414 & 1.414 & 0 & 1.414 & 1.414 & 1.414 \\
+1.414 & 1.414 &  1.171 &  1.171 & 1.414 & 1.414 & 1.414 & 0 & 1.171 & 1.414 \\
+1.414 & 1.414 & 0 & 0 & 1.414 & 1.414 & 1.414 & 1.171 & 0 & 1.414 \\
+1.357 & 1.195 & 1.414 & 1.414 & 1.325 & 1.314 & 1.414 & 1.414 & 1.414 & 0 \\
+\end{bmatrix}
+$}
+\]
+Dari matriks di atas, dapat disimpulkan bahwa semakin kecil nilai jarak antara dua dokumen, maka semakin besar tingkat kemiripan konten di antara keduanya. Sebaliknya, semakin besar nilai jarak, maka kedua dokumen cenderung memiliki perbedaan isi yang lebih signifikan.
+
+\subsubsection{Jarak Manhattan}
+Jarak Manhatta, yang juga dikenal sebagai jarak $L1$ atau jarak \textit{City Block}, merupakan ukuran jarak antara dua titik dalam ruang berdimensi-$n$ yang dihitung berdasarkan jumlah selisih absolut dari setiap koordinat. Misalkan terdapat dua buah vektor, yaitu: $
+X = (x_1, x_2, \ldots, x_n) \quad \text{dan} \quad Y = (y_1, y_2, \ldots, y_n)$. Jarak Manhattan antara dua vektor tersebut dihitung menggunakan Persamaan (\ref{eq:manhattan}). Pada penelitian ini, digunakan dua komentar, yaitu Dokumen 1 dan Dokumen 6, yang masing-masing direpresentrasikan oleh vektor fitur berdimensi 20. Maka, perhitungan jarak Manhattan antara kedua dokumen tersebut dapat ditulis sebagai:
+\[
+d_{\text{Manhattan}}(D_1, D_6) = \sum_{i=1}^{n} |d_{1,1} - d_{6,1}| + |d_{1,2} - d_{6,2}| + \ldots + |d_{1,20} - d_{6,20}|
+\]
+Langkah pertama adalah menghitung selisih absolut dari setiap pasangan elemen $d_{1,i} - d_{6,i}$ untuk semua fitur $i = 1$ sampai 20. Berikut beberapa contoh perhitungannya:
+\begin{itemize}
+    \item $|d_{1,2} - d_{6,2}| = |0.539 - 0.000| = 0.539$
+    \item $|d_{1,3} - d_{6,3}| = |0.539 - 0.000| = 0.539$
+    \item $|d_{1,12} - d_{6,12}| = |0.000 - 0.789| = 0.789$
+    \item $|d_{1,13} - d_{6,13}| = |0.356 - 0.613| = 0.257$
+    \item $|d_{1,16} - d_{6,16}| = |0.539 - 0.000| = 0.539$
+\end{itemize}
+Total dari selisih absolut kelima komponen tersebut adalah:
+\[ \sum_{i=1}^{20} |d_{1,i} - d_{6,i}| = 0.539 + 0.539 + 0.789 + 0.257 + 0.539 = 2.663
+\]
+Dengan demikian, diperoleh jarak Manhattan antara Dokumen 1 dan Dokumen 6 sebesar:
+\[ d_{Manhattan}(D_1,D_6) = 2.663
+\]
+
+Nilai ini  menunjukkan tingkat perbedaan yang lebih besar dibandingkan dengan jarak Euclidean yang telah dihitung sebelumnya, karena metrik manhattan tidak mengkuadratkan selisih, melainkan menjumlahkannya secara langasung. Berikut akan disajikan matriks jarak Manhattan berukuran $10 \times 10$ yang menggambarkan jarak antar semua pasang dokumen dalam himpunan data:
+\\
+\[
+\adjustbox{width=\textwidth,center}{$
+M_{10 \times10} =
+\begin{bmatrix}
+0 & 4.613 & 2.974 & 2.974 & 2.647 & 2.663 & 2.974 & 4.187 & 2.974 & 3.275 \\
+4.613 & 0 & 3.639 & 3.639 & 4.024 & 3.372 & 3.639 & 4.851 & 3.639 & 3.712 \\
+2.974 & 3.639 & 0 & 0 & 2.385 & 2.403 & 2 & 2.585 & 0 & 2.742 \\
+2.974 & 3.639 & 0 & 0 & 2.385 & 2.403 & 2 & 2.585 & 0 & 2.742 \\
+2.647 & 4.024 & 2.385 & 2.385 & 0 & 1.685 & 2.385 & 3.598 & 2.385 & 2.686 \\
+2.663 & 3.372 & 2.403 & 2.403 & 1.685 & 0 & 2.403 & 3.616 & 2.403 & 2.703 \\
+2.974 & 3.639 & 2 & 2 & 2.385 & 2.403 & 0 & 3.212 & 2 & 2.742 \\
+4.187 & 4.851 & 2.585 & 2.585 & 3.598 & 3.616 & 3.212 & 0 & 2.585 & 3.955 \\
+2.974 & 3.639 & 0 & 0 & 2.385 & 2.403 & 2 & 2.585 & 0 & 2.742 \\
+3.275 & 3.712 & 2.742 & 2.742 & 2.686 & 2.703 & 2.742 & 3.955 & 2.742 & 0 \\
+\end{bmatrix}
+$}
+\]
+Seperti halnya pada metrik Euclidean, semakin kecil nilai jarak Manhattan antar dokumen, semakin besar tingkat kemiripan antara kedua dokumen tersebut. Sebaliknya, nilai jarak yang besar menunjukkan perbedaan yang lebih signifikan.
+
+\subsubsection{Jarak Jaccard}
+Indeks Jaccard mengukur kesamaan antara dua himpunan dan didefinisikan sebagai ukuran irisan dibagi dengan ukuran gabungan dari dua himpunan tersebut. Dalam konteks representasi biner, Jaccard Index dirumuskan sebagai:
+\[
+J(A,B) = \frac{|A \cap B|}{|A \cup B|}
+\]
+\\
+Jarak Jaccard mengukur ketidaksamaan dan dihitung sebagai:
+\[
+D_J(A,B) = 1 - J(A,B) = \frac{|A \cup B| - |A \cap B|}{|A \cup B|}
+\]
+\\
+Dalam konteks representasi biner, jika:
+\begin{itemize}
+  \item $M_{11}$ adalah jumlah kata di mana kedua dokumen memiliki nilai 1
+  \item $M_{10}$ adalah jumlah kata di mana Dokumen A = 1 dan Dokumen B = 0
+  \item $M_{01}$ adalah jumlah kata di mana Dokumen A = 0 dan Dokumen B = 1
+\end{itemize}
+
+Maka:
+\[
+J(A,B) = \frac{M_{11}}{M_{11} + M_{10} + M_{01}}
+\]
+\[
+D_J(A,B) = \frac{M_{10} + M_{01}}{M_{11} + M_{10} + M_{01}}
+\]
+Contoh Perhitungan: Dokumen 1 dan Dokumen 6
+\begin{itemize}
+    \item Dokumen 1:
+\[
+    \text {BoW1} = [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+\]
+Kata yang muncul (bernilai 1): \texttt{billion}, \texttt{come}, \texttt{numer}, \texttt{soon}
+\item 
+Dokumen 6:
+\[
+\text {BoW6} = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+\]
+Kata yang muncul (bernilai 1): \texttt{laugh}, \texttt{numer}
+\end{itemize}
+Berdasarkan analisis representasi biner:
+\begin{itemize}
+    \item $M_{11} = 1$, menunjukkan 1 kata yang muncul di kedua dokumen, yaitu \texttt{numer}.
+    \item $M_{10} = 3$, menunjukkan 3 kata yang hanya muncul pada Dokumen 1, yaitu billion, come, soon.
+    \item $M_{01} = 1$, menunjukkan 1 kata yang hanya muncul pada Dokumen 6, yaitu laugh.
+\end{itemize}
+Maka:
+\[
+J(\text{BoW}_1, \text{BoW}_6) = \frac{1}{1 + 3 + 1} = \frac{1}{5} = 0.2
+\]
+\[
+D_J(\text{BoW}_1, \text{BoW}_6) = 1 - 0.2 = 0.8
+\]
+Atau:
+\[
+D_J(\text{BoW}_1, \text{BoW}_6) = \frac{3 + 1}{5} = \frac{4}{5} = 0.8
+\]
+
+Hasik perhitungan jarak Jaccard antara Dokumen 1 dan Dokumen 6 menunjukkan nilai sebesar $0.8$. Nilai ini mengindikasikan bahwa $80\%$ dari seluruh kata yang muncul di salah satu dari kedua dokumen tersebut tidak dimiliki secara bersama, atau dengan kata lain, hanya $20\%$ kata yang sama. Kondisi ini mencerminkan bahwa Dokumen 1 dan Dokumen 6 memiliki perbedaan yang cukup besar dalam hal konten kata yang digunakan. Untuk mengilustrasikan hubungan antar dokumen secara menyeluruh, matriks jarak Jaccard berukuran $10 \times 10$ dapat disusun. Setiap entri $(i,j)$ dalam matriks ini mewakili nilai $D_j(Dokumen_i, Dokumen_j)$, yang mencerminkan tingkat ketidaksamaan antara dua dokumen berdasarkan representasi binernya.
+\[ J_{10 \times 10} =
+\begin{bmatrix}
+0 & 1 & 1 & 1.0 & 0.800 & 0.800 & 1 & 1 & 1 & 0.857 \\
+1 & 0 & 1 & 1 & 1 & 0.875 & 1 & 1 & 1 & 0.900 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.8 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.8 & 0 & 1 \\
+0.800 & 1 & 1 & 1 & 0 & 0.666 & 1 & 1 & 1 & 0.800 \\
+0.800 & 0.875 & 1 & 1 & 0.666 & 0 & 1 & 1 & 1 & 0.800 \\
+1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+1 & 1 & 0.8 & 0.8 & 1 & 1 & 1 & 0 & 0.8 & 1 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.8 & 0 & 1 \\
+0.857 & 0.900 & 1 & 1 & 0.800 & 0.800 & 1 & 1 & 1 & 0 \\
+\end{bmatrix}
+\]
+
+\subsubsection{\textit{Cosine Similarity}}
+
+\textit{Cosine Similarity} merupakan ukuran kesamaan yang didasarkan pada sudut kosinus antara dua vektor non-nol dalam ruang berdimensi $n$. Metrik ini sering digunakan untuk mengukur kemiripan teks. Misalkan dua buah vektor dalam  ruang berdimensi \(n\), yaitu: $
+X = (x_1, x_2, \ldots, x_n) \quad \text{dan} \quad Y = (y_1, y_2, \ldots, y_n)$. Menggunakan Persamaan (\ref{eq:cosine}): 
+
+\[
+S_C(D_1\,D_6) = \cos(\theta) = \frac{D_1 \cdot D_6}{\|D_1\| \cdot \|D_6\|} = \frac{\sum_{i=1}^n d_{1,i} d_{6,i}}{\sqrt{\sum_{i=1}^n d_{1,i}^2} \cdot \sqrt{\sum_{i=1}^n d_{6,i}^2}}
+\]
+\\
+Nilai \textit{Cosine Similarity} berkisar antara  $0$ hingga $1$ untuk vektor dengan nilai non-negatif seperti TF-IDF. Nilai yang lebih tinggi menunjukkan kemiripan yang lebih besar antara kedua dokumen. Sementara jarak Cosine (\textit{Cosine Distance}) dapat dihitung sebagai:
+
+\[
+D_C(D_1,D_6) = 1 - S_C(D_1,D_6)
+\]
+Langkah Perhitungan \textit{Cosine Similarity:} Dokumen 1 dan Dokumen 6\\
+Langkah pertama adalah menghitung \textit{dot product} dari setiap pasangan elemen $d_{1,i} \cdot d_{6,i}$ untuk semua fitur $i=1$ sampai $20$:
+\begin{itemize}
+    \item $d_{1,2} \cdot  d_{6,2} = 0.539 \times 0.000 = 0$
+    \item $d_{1,3} \cdot d_{6,3} = 0.539 \times 0.000 = 0$
+    \item $d_{1,12} \cdot d_{6,12} = 0.000 \times 0.789 = 0$
+    \item $d_{1,13} \cdot d_{6,13} = 0.356 \times 0.613 = 0.218228$
+    \item $d_{1,16} \cdot d_{6,16} = 0.539 \times 0.000 = 0$
+\end{itemize}
+Jumlah dari semua \textit{dot product} adalah:\\
+$D1 \cdot D6 = 0.218228 $ \\
+Langkah selanjutnya adalah menghitung Magnitude $\|D1\|$ dan $\|D6\|$:
+
+\[
+\begin{aligned}
+\|D_1\| &= \sqrt{0.539^2 + 0.539^2 + 0.356^2 + 0.539^2} \\
+       &= \sqrt{0.290 + 0.290 + 0.126 + 0.290} \\
+       &= \sqrt{0.996} \\
+       &\approx 0.997
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\|D_6\| &= \sqrt{0.789^2 + 0.613^2} \\
+       &= \sqrt{0.622 + 0.375} \\
+       &= \sqrt{0.997} \\
+       &\approx 0.998
+\end{aligned}
+\]
+
+
+\paragraph{Cosine Similarity:}
+\[
+S_C(D1, D6) = \frac{0.218}{0.997 \times 0.998} = \frac{0.218}{0.995} \approx 0.219
+\]
+
+\paragraph{Cosine Distance:}
+\[
+D_C(D1, D6) = 1 - S_C(D1, D6) = 1 - 0.219 = 0.781
+\]
+
+Dengan demikian, hasil perhitungan menunjukkan bahwa \textit{ Cosine Similarity} antara Dokumen 1 dan Dokumen 6 adalah $0.219$, yang mengindikasikan tingkat kemiripan yang rendah antara kedua dokumen berdasarkan bobot kata-kata yang terkandung di dalamnya. Sebaliknya,  jarak Cosine sebesar $0.781$ menunjukkan bahwa $78.1\%$ arah vektor antar dokumen berbeda, yang memperkuat interpretasi bahwa kedua dokumen tersebut tidak serupa secara konteks teks. Berikut disajikan matriks Jarak Cosine $10 \times 10$:
+\[ 
+\adjustbox{width=\textwidth,center}{$
+C_{10 \times 10} =
+\begin{bmatrix}
+0 & 1 & 1 & 1 & 0.803 & 0.781 & 1 & 1 & 1 & 0.921 \\
+1 & 0 & 1 & 1 & 1 & 0.735 & 1 & 1 & 1 & 0.714 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.686 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.686 & 0 & 1 \\
+0.803 & 1 & 1 & 1 & 0 & 0.661 & 1 & 1 & 1 & 0.878 \\
+0.781 & 0.735 & 1 & 1 & 0.661 & 0 & 1 & 1 & 1 & 0.864 \\
+1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+1 & 1 & 0.686 & 0.686 & 1 & 1 & 1 & 0 & 0.686 & 1 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 0.686 & 0 & 1 \\
+0.921 & 0.714 & 1 & 1 & 0.878 & 0.864 & 1 & 1 & 1 & 0 \\
+\end{bmatrix}
+$}
+\]
+
+\chapter{KESIMPULAN}
+\label{chap:kesimpulan}
+\section{Kesimpulan}
+\label{sec:kesimpulan}
+Perhitungan matriks jarak pada dokumen teks merupakan tahapan penting dalam analisis data berbasis teks, karena memungkinkan pengukuran tingkat kemiripan atau perbedaan antar dokumen secara numerik. Proses ini diawali dengan tahapan prapemrosesan teks seperti \textit{case folding}, pembersihan karakter, tokenisasi, Normalisasi kata, penghapusan \textit{stopwords}, dan \textit{stemming}, yang bertujuan untuk menyederhanakan struktur data teks mentah menjadi bentuk yang lebih konsisten dan mudah dianalisis. Setelah proses ini, dokumen direpresentasikan dalam bentuk vektor menggunakan metode seperti \textit{Bag of Words} (BoW) atau \textit{Term Frequency-Inverse Document Frequency} (TF-IDF).
+
+Dengan representasi numerik tersebut, jarak antar dokumen dapat dihitung menggunakan berbagai metrik, seperti Manhattan dan Jaccard. Masing-masing metrik memiliki karakteristik tersendiri dalam mengukur kemiripan antar dokumen, sehingga pemilihannya perlu disesuaikan dengan tujuan analisis dan sifat data. Melalui perhitungan matriks jarak, hubungan antar dokumen dapat diidentifikasi secara sistematis, memungkinkan analisis lebih lanjut terhadap struktur dan pola dalam kumpulan teks. Oleh karena itu, pemahaman mendalam terhadap proses ini menjadi fondasi penting dalam berbagai aplikasi pengolahan data teks.
+
+\newpage
+\renewcommand{\bibname}{DAFTAR PUSTAKA} % Ubah nama bab bibliografi
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA} % Tambahkan ke daftar isi
+\bibliography{dafpus} % Nama file .bib Anda
+
+
+\chapter*{Lampiran}
+\label{chap:lampiran}
+
+\begin{table}[h!]
+\centering
+\caption{Contoh Data Komentar}
+\label{tab:content_class}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|}
+\hline
+\textbf{Content} & \textbf{Label} \\
+\hline
+2 billion....Coming soonï»¿ & ham \\
+\hline
+It's so funny it's awesomeness lol aaaaaaa sexy lada?? & ham \\
+\hline
+\url{http://ubuntuone.com/40beUutVu2ZKxK4uTgPZ8Kï»¿} & spam \\
+\hline
+\url{http://shhort.com/a?r=G8iX5cTKdï»¿} & spam \\
+\hline
+2.126.521.750  views!!!!!!!!!!!!!!!!!ï»¿  & ham \\
+\hline
+2:05. Hahahahah ï»¿ & ham \\
+\hline
+Goodï»¿  & ham \\
+\hline
+Hey everyone. Watch this trailer!!!!!!!! \url{http://believemefilm.com?hlr=h2hQBUVB} ï»¿ & spam \\
+\hline 
+\url{https://www.facebook.com/photo.php?fbid=543627485763966&amp;l=0d878a889cï»¿} & spam \\
+\hline
+JUST DANCE 3 ?????? & ham \\
+\hline
+\end{tabularx}
+\end{table}
+
+
+\end{document}

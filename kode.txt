@@ -1,0 +1,92 @@
+def remove_noise1(text):
+    '''Remove unwanted characters while preserving important features for spam/ham classification'''
+
+    if not isinstance(text, str) or pd.isna(text): # More robust check for non-string types
+        return ''
+    
+    # 0. Process emoji first
+    text = combine_emojis(text)
+
+    # 1. Decode HTML entities like &amp;, &lt;, &gt;
+    text = html.unescape(text)
+
+    # 2. Remove HTML tags
+    text = re.sub(r'<[^>]*>', ' ', text)
+
+    # 3. Clean Unicode/BOM characters
+    # Remove zero-width spaces, BOM, and other invisible characters
+    # This covers many problematic non-ASCII characters
+    text = re.sub(r'[\u200b\u200c\u200d\ufeff\x00-\x1f\x7f-\x9f]', '', text)
+    # Fix specific common Unicode issues (ï»¿ is UTF-8 BOM, Â is often from encoding issues)
+    text = text.replace('ï»¿', '').replace('Â', '')
+    
+    # 4. Replace emails with token
+    text = re.sub(r'\b[\w.-]+@[\w.-]+\.\w+\b', ' EMAILADDRESS ', text)
+
+    # 6. Replace URLs and domain-based patterns
+    url_regex_1 = re.compile(r'\b(?:https?://|ftp://|www\.)\S+', re.IGNORECASE)
+    domain_regex = re.compile(
+        r'\b([a-zA-Z0-9-]{2,})\s*\.\s*(com|net|org|id|co|uk|info|biz|io|me|tv|cc|asia|dev|app|xyz)\b',
+        re.IGNORECASE
+    )
+    url_regex_3 = re.compile(r'\bwatch\?v=[\w-]+', re.IGNORECASE)
+
+    text = url_regex_1.sub(' url ', text)
+    text = domain_regex.sub(' url ', text)
+    text = url_regex_3.sub(' url ', text)
+    text = re.sub(r'ï½[^\s]*', 'url', text)
+
+    # 7. Replace ordinal numbers
+    text = re.sub(r'\b\d+(st|nd|rd|th)\b', 'numeric', text) # Add spaces around token
+
+    # 8. Replace various number formats with specific token
+    text = re.sub(
+        r'\b\d+(\.\d+)?([eE][+-]?\d+)?\b',
+        'numeric', # Add spaces around token
+        text
+    )
+
+    text = re.sub(r'\b\d+x10\^\d+\b', ' numeric ', text)
+
+    # 9. Remove repetitive symbols (e.g., !! or ----)
+    text = re.sub(r'(\W)\1+', r'\1', text)    
+
+    # 11. Fix separated letters (spam patterns)
+    # "d-d-d-d" -> "dddd"
+    text = re.sub(r'\b([a-zA-Z])-([a-zA-Z])-([a-zA-Z]+(?:-[a-zA-Z])*)\b',
+                  lambda m: m.group(0).replace('-', ''), text)
+    
+    # "p e a c e" -> "peace" (at least 3 letters separated by spaces)
+    text = re.sub(r'\b([a-zA-Z])\s+([a-zA-Z])\s+([a-zA-Z])(?:\s+([a-zA-Z]))*\b',
+                  lambda m: m.group(0).replace(' ', ''), text)
+    
+
+    # 12. Remove all non-ASCII characters (broader cleanup)
+    # This should be carefully considered if non-ASCII characters might be legitimate content
+    text = re.sub(r'[^\x00-\x7F]+', ' ', text)
+
+    # 13. Clean up excessive special characters (but keep our tokens and alphanumeric)
+    # Replace anything not alphanumeric, space, or part of our core tokens with a space
+    # (Adjust this if you have tokens with non-alphanumeric chars like [EMAIL_TOKEN])
+    # 1. Hapus kurung siku tapi pertahankan isinya → "you[tube]" jadi "youtube"
+    text = re.sub(r'\[(.*?)\]', r'\1', text)
+
+    # 2. Hapus semua karakter selain huruf, angka, dan spasi
+    text = re.sub(r'[^a-zA-Z0-9_\s]', ' ', text) 
+
+    # ➕ 13b. Hapus underscore yang berdiri sendiri atau tidak nempel huruf/angka
+    text = re.sub(r'(?<!\w)_+(?!\w)', '', text)
+
+    # 14. Normalize repeated characters (e.g., "hellooooo" -> "helloo")
+    text = re.sub(r'([a-zA-Z])\1{3,}', r'\1\1', text)
+ 
+    text = re.sub(r'\b(ha){2,}\b', 'haha', text) # Normalize repeated "ha" to "haha"
+
+    # 15. Consolidate multiple instances of our tokens
+    # Combine NUM, url, EMAILADDRESS, CRYPTOADDRESS if they appear consecutively
+    text = re.sub(r'\b(NUM|url|EMAILADDRESS|CRYPTOADDRESS)(\s+\1)+\b', r'\1', text)
+    
+    # 16. Final whitespace cleanup
+    text = re.sub(r'\s+', ' ', text).strip()
+
+    return text
